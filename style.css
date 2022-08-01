@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blueviolet;
+    padding: 35px 80px;
+    
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 0 20px;
+}
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600px;
+    color: white;
+    transition: 0.3s ease-in;
+}
+.logo{
+    color: white;
+}
+.nav-list li a:hover{
+    color: #000000
+}
+.hero{
+    display: flex;
+    background-color: red;
+    height: 90vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.About-us{
+    padding: 40px 90px;
+
+}
