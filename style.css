@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: blueviolet;
+    background-color: #f32963;
     padding: 35px 80px;
     
 }
@@ -33,15 +33,69 @@
 .nav-list li a:hover{
     color: #000000
 }
+
 .hero{
-    display: flex;
-    background-color: red;
+    padding: 50px 0;
     height: 90vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+
 }
+.hero::before{
+    content:'';
+    height: 100%;
+    width: 62%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: #f329632e;
+}
+.main-photo{
+    width: 70%;
+    height: 90%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-logo{
+    position: absolute;
+    right: 0;
+}
+
 .About-us{
     padding: 40px 90px;
-
+}
+.main-text h2{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.main-text p{
+    padding-bottom: 40px;
+}
+.container-people{
+    padding: 100px 0 100px;
+    position: relative;
+    
+}
+.container-people::before{
+    content: '';
+    height: 100%;
+    width: 68%;
+    background-color: #f329632e;
+    position: absolute;
+    z-index: -1;
+}
+.people-1{
+    padding: 40px 90px;
+    border-style: solid;
+}
+.people-2{
+    padding: 40px 90px;
+    border-style: solid;
+}
+.people-3{
+    padding: 40px 90px;
+    border-style: solid;
 }
