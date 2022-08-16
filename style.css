@@ -79,23 +79,4 @@
     position: relative;
     
 }
-.container-people::before{
-    content: '';
-    height: 100%;
-    width: 68%;
-    background-color: #f329632e;
-    position: absolute;
-    z-index: -1;
-}
-.people-1{
-    padding: 40px 90px;
-    border-style: solid;
-}
-.people-2{
-    padding: 40px 90px;
-    border-style: solid;
-}
-.people-3{
-    padding: 40px 90px;
-    border-style: solid;
-}
+
