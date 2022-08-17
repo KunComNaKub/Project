@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    width: 400px;
+    background-color: bisque;
+    border-radius: 15px;
+}
+.center h1{
+    text-align: center;
+    padding: 30px 30px;
+}
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.txt_field{
+    position: relative;
+    padding: 0 40px;
+    margin: 30px 0;
+}
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 35px;
+    font-size: 16px;
+    background: none;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    border-color: aquamarine;
+    transition: .5s;
+}
