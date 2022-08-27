@@ -1,26 +1,46 @@
 <?php
+    session_start();
+    require 'connect.php';
+
     $username = $_POST["username"];
     $password = $_POST["password"];
     
+    if(isset($_POST['btn_login'])&& $username && $password){
 
-    $con = new mysqli("localhost","root","root","project");
-    if($con->connect_error){
-        die("Failed to connect :".$con->connect_error);
-    }else{
-        $stmt = $con->prepare("select * from user where Username = ?");
-        $stmt->bind_param("s",$username);
-        $stmt->execute();
-        $stmt_result = $stmt->get_result();
-        if($stmt_result->num_rows > 0){
-            $data = $stmt_result->fetch_assoc();
-            if($data["Password"]===$password){
-                echo "<h2>Login Success</h2>";
+        $query = "SELECT * FROM project.user WHERE Username='$username' AND Password ='$password'";
+        $result = mysqli_query($connect,$query);
+
+        if(mysqli_num_rows($result)==1){
+            
+            $row = mysqli_fetch_array($result);
+
+            $id = $row['User_id'];
+            $role = $row['Role'];
+
+            switch($role){
+                
+                case "admin":
+                    $_SESSION['admin_name_login'] = $id;
+                    Header('Location: admin/admin_home.php');
+                    break;
+                case "student":
+                    $_SESSION['student_name_login'] = $id;
+                    Header('Location: index.html');
+                    break;
+                default:
+                    echo"<script>alert('สถานะถูกแก้ไข');</script>";
+                    Header('Location: login_form.html');
+                    break;
             }
-            else{
-                echo"invalid";
-            }
-        } else {
-            echo "<h2>Invalid</h2>";
+
+
         }
+        else{
+            echo "<script>alert('ชื่อผู้ใช้งานผิด');</script>";
+            header('Refresh:0;url=index.html');
+        }
+    }
+    else{
+        header('location:index.html');
     }
 ?>
