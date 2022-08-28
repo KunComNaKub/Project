@@ -36,7 +36,7 @@
 
         }
         else{
-            echo "<script>alert('ชื่อผู้ใช้งานผิด');</script>";
+            echo "<scripts>alert('ชื่อผู้ใช่งานผิด');</scripts>";
             header('Refresh:0;url=index.html');
         }
     }
