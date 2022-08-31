@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 30, 2022 at 12:12 PM
+-- Generation Time: Aug 31, 2022 at 04:02 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -42,8 +42,9 @@ CREATE TABLE `student_detail` (
 --
 
 INSERT INTO `student_detail` (`Student_id`, `User_id`, `Fname`, `Lname`, `Faculty`, `Major`) VALUES
-(1, 2, 'testtesttesttesttesttesttesttest', 'test', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
-(2, 3, 'นายธนง', 'คงควรคอย', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ');
+(1, 2, 'test', 'test', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
+(3, 3, 'asd', 'asd', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
+(4, 12, '4', 'asdasd', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (1, 'Admin', 'adminpassword', 'admin'),
-(2, 'test', 'test', 'student');
+(2, 'test', 'test', 'student'),
+(3, 'asd', 'asd', 'student'),
+(9, 'asdsaasds', 'asdasdasd', 'student'),
+(10, 'test2', 'test2', 'student'),
+(11, 'test3', 'test3', 'student'),
+(12, 'test4', 'test4', 'student');
 
 --
 -- Indexes for dumped tables
@@ -75,14 +81,39 @@ INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 --
 ALTER TABLE `student_detail`
   ADD PRIMARY KEY (`Student_id`),
-  ADD UNIQUE KEY `User_id` (`User_id`);
+  ADD KEY `User_id` (`User_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`User_id`),
-  ADD UNIQUE KEY `Username` (`Username`);
+  ADD PRIMARY KEY (`User_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `student_detail`
+--
+ALTER TABLE `student_detail`
+  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `student_detail`
+--
+ALTER TABLE `student_detail`
+  ADD CONSTRAINT `student_detail_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
