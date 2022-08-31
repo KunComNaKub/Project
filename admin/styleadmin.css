@@ -98,11 +98,8 @@ td input{
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    background-color: #f32963;
 }
-#btn-add-std{
-    height: 30px; 
-}
+
 .overlay{
     position: absolute;
     opacity: 0;
@@ -165,7 +162,7 @@ td input{
     border-radius: 5px;
     border: 1px solid #aaa;
 }
-.popup-add-std .form .form-element-std button{
+.popup-add-std .form .form-element-std .confirm-add{
     width: 100%;
     height: 40px;
     border: none;
@@ -176,3 +173,7 @@ td input{
     border-radius: 10px;
     cursor: pointer;
 }
+.plz-select-choice{
+    text-align: center;
+}
+/* พงศกร ขำพิศ*/

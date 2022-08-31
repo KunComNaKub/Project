@@ -58,49 +58,50 @@ $result = $connect->query($sql);
                         <input type="search" placeholder="Search.." >
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
                         <div class="box-add-std">
-                            <button id="btn-add-std"> เพิ่มรายชื่อ </button>
+                            <button id="btn-add-std" > เพิ่มรายชื่อ </button>
                         </div>
                         <div class="overlay">
                         <div class="popup-add-std">
                             <div class="close-btn">&times;</div>
-                            <div class="form" action="" method="" >
+                            <form class="form" action="add-user-std.php" method="POST" >
                                 <h2>เพิ่มรายชื่อ</h2>
                                 <div class="form-element-std">
                                     <label for="username">username</label>
-                                    <input type="text" id="stdLname">
+                                    <input type="text" id="stdLname" name="username-std">
                                 </div>
                                 <div class="form-element-std">
                                     <label for="password">password</label>
-                                    <input type="text" id="stdLname">
+                                    <input type="text" id="stdLname" name="password-std">
                                 </div>
                                 <div class="form-element-std">
                                     <label for="Fname">ชือ</label>
-                                    <input type="text" id="stdFname">
+                                    <input type="text" id="stdFname" name="fname-std">
                                 </div>
                                 <div class="form-element-std">
                                     <label for="Lname">นามสกุล</label>
-                                    <input type="text" id="stdLname">
+                                    <input type="text" id="stdLname" name="lname-std">
                                 </div>
                                 <div class="form-element-std">
                                     <label for="faculty">คณะ</label>
-                                    <select>
-                                        <option>เลือกคณะ</option>
-                                        <option>บริหารธุระกิจ</option>
-                                        <option>ศิลปะศาสตร์</option>
+                                    <select name="faculty-std">
+                                        <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
+                                        <option value="บริหารธุระกิจ">บริหารธุระกิจ</option>
+                                        <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                                     </select>
                                 </div>
                                 <div class="form-element-std">
                                     <label for="major">สาขา</label>
-                                    <select>
-                                        <option>วิทยาการสารสนเทศ</option>
-                                        <option>การตลาด</option>
-                                        <option>บัญชี</option>
+                                    <select name="major-std">
+                                        <option class="plz-select-choice">------- โปรดเลือกสาขา -------</option>
+                                        <option value="วิทยาการสารสนเทศ">วิทยาการสารสนเทศ</option>
+                                        <option value="การตลาด">การตลาด</option>
+                                        <option value="บัญชี">บัญชี</option>
                                     </select>
                                 </div>
                                 <div class="form-element-std">
-                                    <button>ยืนยัน</button>
+                                    <input type="submit" name="submit-add-std" value="ยืนยัน" class="confirm-add">
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         </div>
                     </div>
@@ -133,3 +134,4 @@ $result = $connect->query($sql);
         <script src="popup-add-std.js"></script>
 </body>
 </html>
+<!--พงศกร ขำพิศ-->
