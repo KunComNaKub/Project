@@ -61,11 +61,14 @@
 .container-box span{
     font-size: 30px;
 }
-.search-name{
+.search-name {
     height: 50px;
     margin-top: 10px;
     display: flex;
     align-items: center;
+}
+.form-group{
+    display: flex;
 }
 
 .btn-search{
@@ -175,5 +178,11 @@ td input{
 }
 .plz-select-choice{
     text-align: center;
+}
+.container-box-innerbox .input{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 /* พงศกร ขำพิศ*/

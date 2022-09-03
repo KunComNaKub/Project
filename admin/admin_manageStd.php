@@ -2,7 +2,14 @@
 session_start();
 require 'checkAdmin.php';
 require '../connect.php';
-$sql = "SELECT *,CONCAT(Fname,'&nbsp&nbsp',Lname) as std_name FROM student_detail";
+if (isset($_POST['btn-search'])){
+    $name = $_POST["searchStd"];
+    $sql = "SELECT * FROM student_detail WHERE Fname LIKE '%$name%' ORDER BY Fname ASC"; 
+}
+else{$sql = "SELECT * FROM student_detail";
+}
+
+
 $result = $connect->query($sql);
 
 ?>
@@ -55,8 +62,10 @@ $result = $connect->query($sql);
                 <div class="container-box">
                     <span>รายชื่อนักศึกษา</span>
                     <div class="search-name">
-                        <input type="search" placeholder="Search.." >
+                        <form action = "admin_manageStd.php" class="form-group" method="POST">
+                        <input type="text" placeholder="Search.." name="searchStd">
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
+                        </form>
                         <div class="box-add-std">
                             <button id="btn-add-std" > เพิ่มรายชื่อ </button>
                         </div>
@@ -85,7 +94,7 @@ $result = $connect->query($sql);
                                     <label for="faculty">คณะ</label>
                                     <select name="faculty-std">
                                         <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
-                                        <option value="บริหารธุระกิจ">บริหารธุระกิจ</option>
+                                        <option value="บริหารธุรกิจ">บริหารธุระกิจ</option>
                                         <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                                     </select>
                                 </div>
@@ -106,24 +115,24 @@ $result = $connect->query($sql);
                         </div>
                     </div>
                    
-                    <div class="container-box-innerbox" >
+                    <form action="admin_manageStd.php" class="container-box-innerbox" method ="POST">
                         <table>
                             <tr>
-                                <td>ชื่อ-สกุล</td>
-                                <td>คณะ</td>
-                                <td>สาขา</td>
+                                <td><input type="submit" value="ชื่อ-สกุล" name="stdname" class="input"></td>
+                                <td><input type="submit" value="คณะ" name="stdfac" class="input"></td>
+                                <td><input type="submit" value="สาขา" name="stdname" class="input"></td>
                                 <td>ดูข้อมูล/แก้ไข</td>
                             </tr>
                             <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo $row['std_name'];?></td>
+                                <td><?php echo $row['Fname']; echo "&nbsp&nbsp" ;echo $row['Lname'];?></td>
                                 <td><?php echo $row['Faculty'];?></td>
                                 <td><?php echo $row['Major'];?></td>
                                 <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-std-modify"></td>
                             </tr>
                             <?php endwhile ?>
                         </table>
-                    </div>
+                    </form>
                 </div>
                 
             </section>
