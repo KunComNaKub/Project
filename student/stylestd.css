@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f32963;
+    padding: 35px 80px;
+    
+}
+.container{
+    display: flex;
+}
+.sidebar{
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    padding: 10px 14px;
+    background-color: rgba(228, 211, 211, 0.719);
+}
+.sidebar li{
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 18px;
+}
+.sidebar li a{
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.menu-bar{
+    width: 100%;  
+}
+.sidebar li a:hover{
+    background-color: #f32963;
+}
+.home{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    flex-direction: column;  
+    height: 100vh;
+    width: 100%;
+}
+.head {
+    padding-left: 8px;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+}
+.text-detail-std{
+    background-color: #f32963;
+}
+.text-detail-std .text-detail-std-td{
+ padding-right: 200px;
+ padding-left: 10px;
+}
+/*พงศกร*/

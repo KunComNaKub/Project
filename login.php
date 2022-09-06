@@ -25,7 +25,7 @@
                     break;
                 case "student":
                     $_SESSION['student_name_login'] = $id;
-                    Header('Location: index.html');
+                    Header('Location: student/stdHome.php');
                     break;
                 default:
                     echo"<script>alert('สถานะถูกแก้ไข');</script>";
