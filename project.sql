@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 31, 2022 at 04:02 PM
+-- Generation Time: Sep 06, 2022 at 04:42 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -42,9 +42,12 @@ CREATE TABLE `student_detail` (
 --
 
 INSERT INTO `student_detail` (`Student_id`, `User_id`, `Fname`, `Lname`, `Faculty`, `Major`) VALUES
-(1, 2, 'test', 'test', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
+(1, 2, 'test2', 'test', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
 (3, 3, 'asd', 'asd', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ'),
-(4, 12, '4', 'asdasd', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ');
+(4, 12, 'asd1', 'asdasd', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ'),
+(9, 17, 'test5', 'test5', 'ศิลปะศาสตร์', 'การตลาด'),
+(10, 18, 'test1', 'test1', '', 'บัญชี'),
+(11, 19, 'test3', 'test3', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ');
 
 -- --------------------------------------------------------
 
@@ -69,8 +72,10 @@ INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (3, 'asd', 'asd', 'student'),
 (9, 'asdsaasds', 'asdasdasd', 'student'),
 (10, 'test2', 'test2', 'student'),
-(11, 'test3', 'test3', 'student'),
-(12, 'test4', 'test4', 'student');
+(12, 'test4', 'test4', 'student'),
+(17, 'test5', 'test5', 'student'),
+(18, 'test1', 'test1', 'student'),
+(19, 'test3', 'test3', 'student');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +102,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `student_detail`
 --
 ALTER TABLE `student_detail`
-  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
