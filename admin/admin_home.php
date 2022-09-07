@@ -14,7 +14,7 @@ require 'checkAdmin.php';
     <body> 
         <!--web forms-->
         <header class="header">
-            <div class="logo"><h1>Some Logo</h1></div>
+        <img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo">
         </header>
         <div class="container">
             <nav class="sidebar">
