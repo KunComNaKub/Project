@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 06, 2022 at 04:42 PM
+-- Generation Time: Sep 14, 2022 at 05:12 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -48,6 +48,23 @@ INSERT INTO `student_detail` (`Student_id`, `User_id`, `Fname`, `Lname`, `Facult
 (9, 17, 'test5', 'test5', 'ศิลปะศาสตร์', 'การตลาด'),
 (10, 18, 'test1', 'test1', '', 'บัญชี'),
 (11, 19, 'test3', 'test3', 'บริหารธุรกิจ', 'วิทยาการสารสนเทศ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+CREATE TABLE `subject` (
+  `Subject_id` int(11) NOT NULL,
+  `Course_code` char(11) NOT NULL,
+  `Name_sub` char(100) NOT NULL,
+  `Group_Category` enum('กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์','กลุ่มภาษา','กลุ่มวิทยาศาสตร์และคณิตศาสตร์','กลุ่มบูรณาการ','กลุ่มวิชาแกน','กลุ่มวิชาฝึกงานและประสบการณ์') NOT NULL,
+  `Faculty` enum('บริหารธุรกิจ','ศิลปะศาสตร์') NOT NULL,
+  `Group_course` enum('ศึกษาทั่วไป-บังคับ','ศึกษาทั่วไป-เลือก','เฉพาะ-แกน','เฉพาะ-เลือก','เลือกเสรี') NOT NULL,
+  `Year` int(4) NOT NULL,
+  `Credit` char(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
