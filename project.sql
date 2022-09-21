@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2022 at 05:12 PM
+-- Generation Time: Sep 21, 2022 at 05:47 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -60,6 +60,7 @@ CREATE TABLE `subject` (
   `Course_code` char(11) NOT NULL,
   `Name_sub` char(100) NOT NULL,
   `Group_Category` enum('กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์','กลุ่มภาษา','กลุ่มวิทยาศาสตร์และคณิตศาสตร์','กลุ่มบูรณาการ','กลุ่มวิชาแกน','กลุ่มวิชาฝึกงานและประสบการณ์') NOT NULL,
+  `Group_sub` char(100) NOT NULL,
   `Faculty` enum('บริหารธุรกิจ','ศิลปะศาสตร์') NOT NULL,
   `Group_course` enum('ศึกษาทั่วไป-บังคับ','ศึกษาทั่วไป-เลือก','เฉพาะ-แกน','เฉพาะ-เลือก','เลือกเสรี') NOT NULL,
   `Year` int(4) NOT NULL,
@@ -106,6 +107,12 @@ ALTER TABLE `student_detail`
   ADD KEY `User_id` (`User_id`);
 
 --
+-- Indexes for table `subject`
+--
+ALTER TABLE `subject`
+  ADD PRIMARY KEY (`Subject_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -120,6 +127,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `student_detail`
   MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `subject`
+--
+ALTER TABLE `subject`
+  MODIFY `Subject_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
