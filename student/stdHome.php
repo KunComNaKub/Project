@@ -2,6 +2,8 @@
 session_start();
 require 'checkStd.php';
 require '../connect.php';
+$sql = "SELECT * FROM student_detail";
+$result = $connect->query($sql);
 ?>
 <!DOCTYPE html>
 <html>

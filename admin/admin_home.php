@@ -32,7 +32,7 @@ require 'checkAdmin.php';
                                 </a>
                             </li>
                             <li class="link">
-                                <a href ="#">
+                                <a href ="Admin_manageSub.php">
                                     <span class="text nav-text">จัดการวิชา</span>
                                 </a>
                             </li>
