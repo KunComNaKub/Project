@@ -1,6 +1,21 @@
 <?php
 session_start();
 require 'checkAdmin.php';
+require '../connect.php';
+if (isset($_POST['btn-search'])){
+    $name = $_POST["searchSub"];
+    $sql = "SELECT * FROM subject WHERE Name_sub LIKE '%$name%' ORDER BY Name_sub ASC"; 
+}
+else if(isset($_POST['btn-search-catagorie'])){
+    $faculty = $_POST['select-faculty'];
+    $groupcoures = $_POST['select-groupcoures'];
+    $catagorie = $_POST['select-catagorie'];
+    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_sub Like '%$catagorie%'";
+}
+else{$sql = "SELECT * FROM subject";
+}
+
+$result = $connect->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,40 +67,40 @@ require 'checkAdmin.php';
                     <div class="search-group">
                         <form action="admin_manageSub.php" class="form-group" method="post">
                             <span>คณะ</span>
-                            <select name="select-faculty">
+                            <select name="select-faculty" id = "select-faculty">
                                 <option value="">เลือกคณะทั้งหมด</option>
-                                <option value="">บริหารธุรกิจ</option>
-                                <option value="">ศิลปะศาสตร์</option>
+                                <option value="บริหารธุรกิจ">บริหารธุรกิจ</option>
+                                <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                             </select>
                             <span>หมวดวิชา</span>
                             <select name="select-groupcoures">
                                 <option value="">เลือกหมวดวิชาทั้งหมด</option>
-                                <option value="">ศึกษาทั่วไป-บังคับ</option>
-                                <option value="">ศึกษาทั่วไป-เลือก</option>
-                                <option value="">เฉพาะ-แกน</option>
-                                <option value="">เฉพาะ-เลือก</option>
-                                <option value="">เลือกเสรี</option>
+                                <option value="ศึกษาทั่วไป-บังคับ">ศึกษาทั่วไป-บังคับ</option>
+                                <option value="ศึกษาทั่วไป-เลือก">ศึกษาทั่วไป-เลือก</option>
+                                <option value="เฉพาะ-แกน">เฉพาะ-แกน</option>
+                                <option value="เฉพาะ-เลือก">เฉพาะ-เลือก</option>
+                                <option value="เลือกเสรี">เลือกเสรี</option>
                             </select>
                             <span>กลุ่มวิชา</span>
                             <select name="select-catagorie">
                                 <option value="">เลือกกลุ่มวิชาทั้งหมด</option>
-                                <option value="">กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์</option>
-                                <option value="">กลุ่มภาษา</option>
-                                <option value="">กลุ่มวิทยาศาสตร์และคณิตศาสตร์</option>
-                                <option value="">กลุ่มบูรณาการ</option>
-                                <option value="">กลุ่มวิชาแกน</option>
-                                <option value="">กลุ่มวิชาฝึกงานและประสบการณ์</option>
+                                <option value="กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์">กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์</option>
+                                <option value="กลุ่มภาษา">กลุ่มภาษา</option>
+                                <option value="กลุ่มวิทยาศาสตร์และคณิตศาสตร์">กลุ่มวิทยาศาสตร์และคณิตศาสตร์</option>
+                                <option value="กลุ่มบูรณาการ">กลุ่มบูรณาการ</option>
+                                <option value="กลุ่มวิชาแกน">กลุ่มวิชาแกน</option>
+                                <option value="กลุ่มวิชาฝึกงานและประสบการณ์">กลุ่มวิชาฝึกงานและประสบการณ์</option>
                             </select>
                             <input type="submit" value="ค้นหา" name="btn-search-catagorie" class="btn-catagorie">
                         </form>
                     </div> 
                     <div class="search-name">
                         <form action = "admin_manageSub.php" class="form-group" method="POST">
-                        <input type="text" placeholder="Search.." name="searchStd">
+                        <input type="text" placeholder="Search.." name="searchSub">
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
                         </form>
                         <div class="box-add-sub">
-                            <button id="btn-add-sub" > เพิ่มวิชา</button>
+                            <button id="btn-add-sub"> เพิ่มวิชา</button>
                         </div>
                         <div class="overlay">
                             <div class="poppup-add-sub">
@@ -96,7 +111,7 @@ require 'checkAdmin.php';
                                         <label for="sub-faculty">คณะ</label>
                                         <select name="sub-faculty">
                                             <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
-                                            <option value="บริหารธุรกิจ">บริหารธุระกิจ</option>
+                                            <option value="บริหารธุรกิจ">บริหารธุระกิจและเทคโนโลยีสารสนเทศ</option>
                                             <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                                         </select>
                                     </div>
@@ -110,6 +125,7 @@ require 'checkAdmin.php';
                                             <option value="กลุ่มบูรณาการ">กลุ่มบูรณาการ</option>
                                             <option value="กลุ่มวิชาแกน">กลุ่มวิชาแกน</option>
                                             <option value="กลุ่มวิชาฝึกงานและประสบการณ์">กลุ่มวิชาฝึกงานและประสบการณ์</option>
+                                            <option value="เลือกเสรี">เลือกเสรี</option>
                                         </select>
                                     </div>
                                     <div class="form-element-sub">
@@ -145,9 +161,41 @@ require 'checkAdmin.php';
                                         <label for="course-year">ปีการศึกษา</label>
                                         <input type="text" id="course-year" name="course-year">
                                     </div>
+                                    <div class="form-element-sub">
+                                        <input type="submit" name="submit-add-sub" value="ยืนยัน" class="confirm-add">
+                                    </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> 
+                    </div>
+
+                    <div class="table-show-subject">
+                    <table>
+                        <tr>
+                            <td>คณะ</td>
+                            <td>กลุ่มรายวิชา</td>
+                            <td>หมวดวิชา</td>
+                            <td>กลุ่ม</td>
+                            <td>รหัสวิชา</td>
+                            <td>ชื่อวิชา</td>
+                            <td>หน่วยกิต</td>
+                            <td>ปีการศึกษา</td>
+                            <td>แก้ไข</td>
+                        </tr>
+                        <?php while($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo $row['Faculty'];?></td>
+                            <td><?php echo $row['Group_Category'];?></td>
+                            <td><?php echo $row['Group_course'];?></td>
+                            <td><?php echo $row['Group_sub'];?></td>
+                            <td><?php echo $row['Course_code'];?></td>
+                            <td><?php echo $row['Name_sub'];?></td>
+                            <td><?php echo $row['Credit'];?></td>
+                            <td><?php echo $row['Sub_Year'];?></td>
+                            <td></td>
+                        </tr>
+                        <?php endwhile ?>
+                    </table>
                     </div>
                 </div>
             </section>
