@@ -295,4 +295,5 @@ select.addEventListener('change',function(){
         $test.length =1;
     }
 })
+
 //พงศกร ขำพิศ

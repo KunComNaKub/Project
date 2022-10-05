@@ -62,6 +62,12 @@ $result = $connect->query($sql);
                                             <td>นาสกุล:</td>
                                             <td class="text-detail-std-td">asdsad</td>
                                         </tr>
+                                        <tr>
+                                            <td>คณะ:</td>
+                                            <td class= "text-detail-std-td">asd</td>
+                                            <td>สาขา:</td>
+                                            <td class = "text-detail-std-td">asd</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </form>
