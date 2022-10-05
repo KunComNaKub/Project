@@ -2,16 +2,19 @@
 session_start();
 require 'checkAdmin.php';
 require '../connect.php';
-if (isset($_POST['btn-search'])){
-    $name = $_POST["searchSub"];
-    $sql = "SELECT * FROM subject WHERE Name_sub LIKE '%$name%' ORDER BY Name_sub ASC"; 
-}
-else if(isset($_POST['btn-search-catagorie'])){
+if(isset($_POST['btn-search-catagorie'])){
     $faculty = $_POST['select-faculty'];
     $groupcoures = $_POST['select-groupcoures'];
     $catagorie = $_POST['select-catagorie'];
-    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_sub Like '%$catagorie%'";
+    $groupcatagorie = $_POST['group-sub-catagorie'];
+    $name = $_POST["searchSub"];
+    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_Category Like '%$catagorie%'AND Group_sub Like '%$groupcatagorie%' AND Name_sub LIKE '%$name%'";
 }
+else if (isset($_POST['btn-search-catagorie'])){
+    $name = $_POST["searchSub"];
+    $sql = "SELECT * FROM subject WHERE Name_sub LIKE '%$name%' ORDER BY Name_sub ASC"; 
+}
+
 else{$sql = "SELECT * FROM subject";
 }
 
@@ -66,6 +69,7 @@ $result = $connect->query($sql);
                     <span>รายวิชา</span>
                     <div class="search-group">
                         <form action="admin_manageSub.php" class="form-group" method="post">
+                            <input type="text" placeholder="Search.." name="searchSub">
                             <span>คณะ</span>
                             <select name="select-faculty" id = "select-faculty">
                                 <option value="">เลือกคณะทั้งหมด</option>
@@ -82,7 +86,7 @@ $result = $connect->query($sql);
                                 <option value="เลือกเสรี">เลือกเสรี</option>
                             </select>
                             <span>กลุ่มวิชา</span>
-                            <select name="select-catagorie">
+                            <select class="select-catagorie" name="select-catagorie">
                                 <option value="">เลือกกลุ่มวิชาทั้งหมด</option>
                                 <option value="กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์">กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์</option>
                                 <option value="กลุ่มภาษา">กลุ่มภาษา</option>
@@ -91,14 +95,14 @@ $result = $connect->query($sql);
                                 <option value="กลุ่มวิชาแกน">กลุ่มวิชาแกน</option>
                                 <option value="กลุ่มวิชาฝึกงานและประสบการณ์">กลุ่มวิชาฝึกงานและประสบการณ์</option>
                             </select>
+                            <span>กลุ่ม</span>
+                            <select class = "group-sub-catagorie" name= "group-sub-catagorie">
+                                <option value="">เลือกกลุ่ม</option>
+                            </select>  
                             <input type="submit" value="ค้นหา" name="btn-search-catagorie" class="btn-catagorie">
                         </form>
                     </div> 
                     <div class="search-name">
-                        <form action = "admin_manageSub.php" class="form-group" method="POST">
-                        <input type="text" placeholder="Search.." name="searchSub">
-                        <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
-                        </form>
                         <div class="box-add-sub">
                             <button id="btn-add-sub"> เพิ่มวิชา</button>
                         </div>

@@ -4,7 +4,13 @@ require 'checkAdmin.php';
 require '../connect.php';
 if (isset($_POST['btn-search'])){
     $name = $_POST["searchStd"];
-    $sql = "SELECT * FROM student_detail WHERE Fname LIKE '%$name%' ORDER BY Fname ASC"; 
+    $faculty = $_POST['select-faculty'];
+    $major = $_POST['select-major'];
+    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' "; 
+}
+else if(isset($_POST['btn-search'])){
+    $name = $_POST["searchStd"];
+    $sql = "SELECT * FROM student_detail WHERE Fname LIKE '%$name%' order by Fname ASC";
 }
 else{$sql = "SELECT * FROM student_detail";
 }
@@ -64,6 +70,19 @@ $result = $connect->query($sql);
                     <div class="search-name">
                         <form action = "admin_manageStd.php" class="form-group" method="POST">
                         <input type="text" placeholder="Search.." name="searchStd">
+                        <span>คณะ</span>
+                        <select name = "select-faculty" name= "select-faculty">
+                            <option value="">เลือกคณะทั้งหมด</option>
+                            <option value="บริหารธุรกิจ">บริหารธุรกิจ</option>
+                            <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
+                        </select>
+                        <span>สาขา</span>
+                        <select name = "select-major" name= "select-major">
+                            <option value="">เลือกสาขา</option>
+                            <option value="วิทยาการสารสนเทศ">วิทยาการสารสนเทศ</option>
+                            <option value="การตลาด">การตลาด</option>
+                            <option value="บัญชี">บัญชี</option>
+                        </select>
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
                         </form>
                         <div class="box-add-std">
@@ -76,19 +95,19 @@ $result = $connect->query($sql);
                                 <h2>เพิ่มรายชื่อ</h2>
                                 <div class="form-element-std">
                                     <label for="username">username</label>
-                                    <input type="text" id="stdLname" name="username-std">
+                                    <input type="text" id="stdLname" name="username-std" >
                                 </div>
                                 <div class="form-element-std">
                                     <label for="password">password</label>
-                                    <input type="text" id="stdLname" name="password-std">
+                                    <input type="text" id="stdLname" name="password-std" >
                                 </div>
                                 <div class="form-element-std">
                                     <label for="Fname">ชือ</label>
-                                    <input type="text" id="stdFname" name="fname-std">
+                                    <input type="text" id="stdFname" name="fname-std" >
                                 </div>
                                 <div class="form-element-std">
                                     <label for="Lname">นามสกุล</label>
-                                    <input type="text" id="stdLname" name="lname-std">
+                                    <input type="text" id="stdLname" name="lname-std" >
                                 </div>
                                 <div class="form-element-std">
                                     <label for="faculty">คณะ</label>

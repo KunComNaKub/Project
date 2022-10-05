@@ -219,6 +219,9 @@ td input{
     display: flex;
     align-items: center;
 }
-
+.search-name span{
+    font-size: 19px;
+    margin: 0px 10px;
+}
 
 /* พงศกร ขำพิศ*/
