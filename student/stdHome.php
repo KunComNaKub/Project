@@ -2,8 +2,11 @@
 session_start();
 require 'checkStd.php';
 require '../connect.php';
-$sql = "SELECT * FROM student_detail";
+$id = $_SESSION['student_name_login'];
+$sql = "SELECT * FROM student_detail, user WHERE student_detail.User_id = $id AND user.User_id = $id ";
 $result = $connect->query($sql);
+$row = $result->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,22 +57,43 @@ $result = $connect->query($sql);
                                     <tbody>
                                         <tr>
                                             <td>รหัสนักศึกษา:</td>
-                                            <td class="text-detail-std-td">asdas</td>
+                                            <td class="text-detail-std-td"><?php echo $row['Username'];?></td>
                                             <td>เลขประจำตัวประชาชน:</td>
-                                            <td class="text-detail-std-td">asdas</td>
-                                            <td>ชื่อนักศึกษา:</td>
-                                            <td class="text-detail-std-td">asdasd</td>
+                                            <td class="text-detail-std-td"><?php echo $row['Student_idcard' ];?></td>
+                                            <td>ชือนักศึกษา:</td>
+                                            <td class="text-detail-std-td"><?php echo $row['Fname'];?></td>
                                             <td>นาสกุล:</td>
-                                            <td class="text-detail-std-td">asdsad</td>
+                                            <td class="text-detail-std-td"><?php echo $row['Lname'];?></td>
                                         </tr>
                                         <tr>
                                             <td>คณะ:</td>
-                                            <td class= "text-detail-std-td">asd</td>
+                                            <td class= "text-detail-std-td"><?php echo $row['Faculty'];?></td>
                                             <td>สาขา:</td>
-                                            <td class = "text-detail-std-td">asd</td>
+                                            <td class = "text-detail-std-td"><?php echo $row['Major'];?></td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                
+                                <div class="menu-student">
+                                    <ul class="menu-student-link">
+                                        <li class="link">
+                                            <a href="edit_student.php">
+                                                <span>แก้ไขข้อมูล</span>
+                                            </a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="#">
+                                                <span>เทียบโอน</span>
+                                            </a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="#">
+                                                <span>ประวัติเทียบโอน</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
                             </form>
                         </div>
                     </div>

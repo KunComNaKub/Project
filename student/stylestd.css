@@ -71,4 +71,41 @@
  padding-right: 200px;
  padding-left: 10px;
 }
+.text-detail-std td{
+    text-align: end;
+}
+.box-detail-std{
+    height: 70%;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu-student-link{
+    display: flex;
+}
+.menu-student-link li{
+    list-style: none;
+    
+   
+    font-size: 17px;
+}
+.menu-student-link li a{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+    padding: 12px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.container-edit-std{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    transform: translate(-50%,-50%) scale(1.25);
+    padding: 20px 20px;
+    border-radius: 7px;
+    background-color: rgb(230, 81, 123);
+}
 /*พงศกร*/

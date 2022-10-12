@@ -8,7 +8,8 @@ if(isset($_POST['btn-search-catagorie'])){
     $catagorie = $_POST['select-catagorie'];
     $groupcatagorie = $_POST['group-sub-catagorie'];
     $name = $_POST["searchSub"];
-    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_Category Like '%$catagorie%'AND Group_sub Like '%$groupcatagorie%' AND Name_sub LIKE '%$name%'";
+    $sub_year = $_POST["sub-year"];
+    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_Category Like '%$catagorie%'AND Group_sub Like '%$groupcatagorie%' AND Name_sub LIKE '%$name%' AND Sub_year LIKE '%$sub_year%' ";
 }
 else if (isset($_POST['btn-search-catagorie'])){
     $name = $_POST["searchSub"];
@@ -98,7 +99,8 @@ $result = $connect->query($sql);
                             <span>กลุ่ม</span>
                             <select class = "group-sub-catagorie" name= "group-sub-catagorie">
                                 <option value="">เลือกกลุ่ม</option>
-                            </select>  
+                            </select>
+                            <input type= "text" placeholder="ปีการศึกษา" name = "sub-year">
                             <input type="submit" value="ค้นหา" name="btn-search-catagorie" class="btn-catagorie">
                         </form>
                     </div> 

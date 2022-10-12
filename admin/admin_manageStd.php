@@ -6,7 +6,8 @@ if (isset($_POST['btn-search'])){
     $name = $_POST["searchStd"];
     $faculty = $_POST['select-faculty'];
     $major = $_POST['select-major'];
-    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' "; 
+    $student_year = $_POST['student_year'];
+    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' AND Student_year LIKE '%$student_year%'"; 
 }
 else if(isset($_POST['btn-search'])){
     $name = $_POST["searchStd"];
@@ -83,6 +84,8 @@ $result = $connect->query($sql);
                             <option value="การตลาด">การตลาด</option>
                             <option value="บัญชี">บัญชี</option>
                         </select>
+                        <span></span>
+                        <input type="text" placeholder="ปีการศึกษา" name="student_year">
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
                         </form>
                         <div class="box-add-std">
@@ -127,6 +130,10 @@ $result = $connect->query($sql);
                                     </select>
                                 </div>
                                 <div class="form-element-std">
+                                    <label for="student_year">ปีการศึกษา</label>
+                                    <input type="text" placeholder="ปีการศึกษา" name="student_year">
+                                </div>
+                                <div class="form-element-std">
                                     <input type="submit" name="submit-add-std" value="ยืนยัน" class="confirm-add">
                                 </div>
                             </form>
@@ -140,6 +147,7 @@ $result = $connect->query($sql);
                                 <td><input type="submit" value="ชื่อ-สกุล" name="stdname" class="input"></td>
                                 <td><input type="submit" value="คณะ" name="stdfac" class="input"></td>
                                 <td><input type="submit" value="สาขา" name="stdname" class="input"></td>
+                                <td><input type="submit" value="ปีการศึกษา" name="stdname" class="input"></td>
                                 <td>ดูข้อมูล/แก้ไข</td>
                             </tr>
                             <?php while($row = $result->fetch_assoc()): ?>
@@ -147,6 +155,7 @@ $result = $connect->query($sql);
                                 <td><?php echo $row['Fname']; echo "&nbsp&nbsp" ;echo $row['Lname'];?></td>
                                 <td><?php echo $row['Faculty'];?></td>
                                 <td><?php echo $row['Major'];?></td>
+                                <td><?php echo $row['Student_year']; ?>
                                 <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-std-modify"></td>
                             </tr>
                             <?php endwhile ?>

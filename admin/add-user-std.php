@@ -7,6 +7,7 @@ if(isset($_POST['submit-add-std'])){
     $lastname = $_POST['lname-std'];
     $faculty = $_POST['faculty-std'];
     $major = $_POST['major-std'];
+    $student_year = $_POST['student_year'];
     if($username == "" || $password == "" || $firstname == "" || $lastname == "" || $faculty == "------- โปรดเลือกคณะ -------" || $major == "------- โปรดเลือกสาขา -------" ){
         echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
         window.location.href='admin_manageStd.php';</script>");
@@ -21,7 +22,7 @@ if(isset($_POST['submit-add-std'])){
         }else{
             $query1 = "INSERT INTO user (Username, Password, Role) VALUE ('$username','$password','student')";
             $result1 = mysqli_query($connect,$query1);
-            $query2 = "INSERT INTO student_detail(User_id,Fname,Lname,Faculty,Major) VALUE (LAST_INSERT_ID(),'$firstname','$lastname','$faculty','$major');";
+            $query2 = "INSERT INTO student_detail(User_id,Fname,Lname,Faculty,Major,Student_year) VALUE (LAST_INSERT_ID(),'$firstname','$lastname','$faculty','$major','$student_year');";
             $result2 = mysqli_query($connect,$query2);
             if($result1 && $result2){
                 echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');
