@@ -77,7 +77,7 @@ $row = $result->fetch_assoc();
                                 <div class="menu-student">
                                     <ul class="menu-student-link">
                                         <li class="link">
-                                            <a href="edit_student.php">
+                                            <a href="edit_student.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>แก้ไขข้อมูล</span>
                                             </a>
                                         </li>
