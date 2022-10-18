@@ -3,7 +3,6 @@ session_start();
 require 'checkStd.php';
 require '../connect.php';
 if(isset($_POST['btn-update-std-profile']))
-
 {
     $Student_id = $_GET['ID'];
     $Fname = $_POST['Fname'];

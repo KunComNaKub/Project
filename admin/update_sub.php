@@ -4,7 +4,6 @@ require 'checkAdmin.php';
 require '../connect.php';
 if(isset($_POST['btn-update-sub']))
 {
-
     $Subject_id = $_GET['ID'];
     $Course_code = $_POST['course-code'];
     $Name_sub = $_POST['name-sub'];
