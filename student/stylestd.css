@@ -18,6 +18,7 @@
 }
 .container{
     display: flex;
+    
 }
 .sidebar{
     top: 0;
@@ -85,8 +86,6 @@
 }
 .menu-student-link li{
     list-style: none;
-    
-   
     font-size: 17px;
 }
 .menu-student-link li a{
@@ -108,4 +107,33 @@
     border-radius: 7px;
     background-color: rgb(230, 81, 123);
 }
+.box_transfer td{
+    border: 1px solid;
+    text-align: center;
+}
+.box_transfer table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.container_transfer{
+    display: flex;
+    justify-content: center;
+}
+.box_transfer{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 150vh;
+    background-color: red;
+}
+.box_transfer_social{
+    margin: 15px 20px;
+    background-color: aqua;
+
+}
+.box_transfer_language{
+    margin: 15px 20px;
+    background-color: aqua;
+}
+
 /*พงศกร*/

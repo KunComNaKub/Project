@@ -13,6 +13,7 @@ $Student_idcard = $row['Student_idcard'];
 $Faculty = $row['Faculty'];
 $Major = $row['Major'];
 $student_year = $row['Student_year'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@ $student_year = $row['Student_year'];
     </head>
     <body>
         <div class ="container-edit-std">
-            <form action="update_stdprofile.php" method="POST">
+            <form action="update_stdprofile.php?ID=<?php echo $Student_id ?>" method="POST">
                 <h2>แก้ไขข้อมูลนักศึกษา</h2>
                 <div>
                     <label>ชื่อ :</label>

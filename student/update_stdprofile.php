@@ -5,6 +5,7 @@ require '../connect.php';
 if(isset($_POST['btn-update-std-profile']))
 
 {
+    $Student_id = $_GET['ID'];
     $Fname = $_POST['Fname'];
     $Lname = $_POST['Lname'];
     $Student_idcard = $_POST['Student-idcard'];
@@ -16,7 +17,7 @@ if(isset($_POST['btn-update-std-profile']))
         window.location.href='stdHome.php';</script>");
     }
     else{
-        $query = "UPDATE Student_detail SET Fname = '$Fname', Lname = '$Lname' , Student_idcard = '$Student_idcard', Faculty = '$Faculty' ,Major = '$Major' ,Student_year = '$Student_year'";
+        $query = "UPDATE Student_detail SET Fname = '$Fname', Lname = '$Lname' , Student_idcard = '$Student_idcard', Faculty = '$Faculty' ,Major = '$Major' ,Student_year = '$Student_year' WHERE Student_id = $Student_id";
         $result = mysqli_query($connect,$query);
         if($result){
             echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');

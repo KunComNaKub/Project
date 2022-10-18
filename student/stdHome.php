@@ -82,7 +82,7 @@ $row = $result->fetch_assoc();
                                             </a>
                                         </li>
                                         <li class="link">
-                                            <a href="#">
+                                            <a href="transfer_student.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>เทียบโอน</span>
                                             </a>
                                         </li>
