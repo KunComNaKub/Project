@@ -6,6 +6,7 @@ $Subject_id = $_GET['GetID'];
 $sql = "SELECT * FROM subject,transfer_std WHERE subject.Subject_id = $Subject_id ";
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@ $row = $result->fetch_assoc();
 <body>
 
 <div class = "container">
-    <form action ="update_transfer.php">
+    <form action ="update_transfer.php?ID=<?php echo $Subject_id ?> " method = "POST">
        <div>
         <h1>เทียบโอนวิชา</h1>
        </div>
@@ -30,7 +31,7 @@ $row = $result->fetch_assoc();
             <span>รหัสวิชา :<?php echo $row['Course_code']?></span>
         </div>
         <div>
-            <span>รายวิชาปริญาตรี มทร.ตะวันออก :<?php echo $row['Course_code']?></span>
+            <span>รายวิชาปริญาตรี มทร.ตะวันออก :<?php echo $row['Name_sub']?></span>
         </div>
         <div>
             <span>หน่วยกิต :<?php echo $row['Credit']?></span>
