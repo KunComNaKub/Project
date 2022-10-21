@@ -3,6 +3,7 @@ session_start();
 require 'checkAdmin.php';
 require '../connect.php';
 if(isset($_POST['btn-update-sub']))
+
 {
     $Subject_id = $_GET['ID'];
     $Course_code = $_POST['course-code'];
