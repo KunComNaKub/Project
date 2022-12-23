@@ -20,7 +20,7 @@ $row = $result->fetch_assoc();
     <body> 
         <!--web forms-->
         <header class="header">
-            <img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo">
+        <a href="stdHome.php"><img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo"></a>
         </header>
         <div class="container">
             <nav class="sidebar">
@@ -33,7 +33,7 @@ $row = $result->fetch_assoc();
                                 </a>
                             </li>
                             <li class="link">
-                                <a href ="#">
+                                <a href ="changepassword.php">
                                     <span class="text nav-text">เปลี่ยนรหัสผ่าน</span>
                                 </a>
                             </li>
@@ -87,7 +87,7 @@ $row = $result->fetch_assoc();
                                             </a>
                                         </li>
                                         <li class="link">
-                                            <a href="#">
+                                            <a href="std_history_tran.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>ประวัติเทียบโอน</span>
                                             </a>
                                         </li>

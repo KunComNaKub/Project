@@ -131,12 +131,39 @@
     background-color: aqua;
 
 }
-.box_transfer_language{
-    margin: 15px 20px;
-    background-color: aqua;
-}
 #submit2{
     display: none;
 }
+.btn_link_tran{
+    background-color: green;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding:.3rem ;
+    border-radius: .2rem;
+    outline: none;
+    text-decoration: none;
+}
+.btn_delete_trans{
+    background-color: red;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding:.3rem;
+    margin:.2rem;
+    outline: none;
+    border-radius: .2rem;
+}
+.btn_link_tran.disable,.btn_delete_trans.disable,.btn-confirm-tran.disable,.btn-cancle_tran.disable{
+    pointer-events: none;
+    cursor: not-allowed;
+    border: none;
+    color: inherit;
+    padding:.3rem;
+    margin:.2rem;
+    border-radius: .2rem;
+    background-color: gray;
+}
+
 
 /*พงศกร*/

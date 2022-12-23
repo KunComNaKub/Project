@@ -2,6 +2,7 @@
 session_start();
 require 'checkStd.php';
 require '../connect.php';
+
 $Subject_id = $_GET['GetID'];
 $sql = "SELECT * FROM subject,transfer_std WHERE subject.Subject_id = $Subject_id ";
 $result = $connect->query($sql);
@@ -43,7 +44,7 @@ $row = $result->fetch_assoc();
         </div>
         <div>
             <label>รายวิชาประกาศนียบัตรวิชาชีพชั้นสูง :</label>
-            <input type="text" name="Subject_nametran">
+            <input type="text" name="Subject_nametrann">
         </div>
         <div>
             <label>หน่วยกิต :</label>

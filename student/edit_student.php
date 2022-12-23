@@ -25,6 +25,9 @@ $student_year = $row['Student_year'];
         <link rel='stylesheet' type='text/css' media='screen' href='stylestd.css'>   
     </head>
     <body>
+    <header class="header">
+            <a href="stdHome.php"><img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo"></a>
+        </header>
         <div class ="container-edit-std">
             <form action="update_stdprofile.php?ID=<?php echo $Student_id ?>" method="POST">
                 <h2>แก้ไขข้อมูลนักศึกษา</h2>
