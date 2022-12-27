@@ -7,6 +7,8 @@ $sql = "SELECT * FROM student_detail, user WHERE student_detail.User_id = $id AN
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
 
+$value_std_confirm = $row['std_confirm_tran'];
+echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,19 +89,46 @@ $row = $result->fetch_assoc();
                                             </a>
                                         </li>
                                         <li class="link">
-                                            <a href="std_history_tran.php?GetID=<?php echo $row['Student_id']; ?>">
-                                                <span>ประวัติเทียบโอน</span>
+                                            <a href="">
+                                                <span>อัพโหลดใบ รบ</span>
+                                            </a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="">
+                                                <span>ลบใบ รบ</span>
                                             </a>
                                         </li>
                                     </ul>
 
                                 </div>
+
+
                             </form>
+                        </div>
+                    </div>
+                    <div class = "head">
+                        <h2>ผลการเทียบโอน/ดูใบ รบ</h2>
+                        <div class = "box-std-tran">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><h class = "pass">เทียบโอนได้รับการอนุมัติแล้ว</h>
+                                            <h class = "notpass">เทียบโอนไม่ผ่านการอนุมัติ</h>
+                                            <h class = "no-tran">ยังไม่ได้ทำการเทียบโอน</h>
+                                            <h class = "pending">รอการพิจารณา</h>
+                                        </td>
+                                        <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</td>
+                                        <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=DOWNLOAD" class = "download-std">download</td>
+                                        <td><a href ="" class = "download-std">ดูใบ รบ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </body>
+    <script src="std-tran.js"></script>
 </html>
 <!--พงศกร-->

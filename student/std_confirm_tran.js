@@ -6,4 +6,6 @@ if(value_std_confirm == 1){
 if(value_std_confirm == 0){
     document.querySelector(".btn-cancle_tran").classList.add("disable");
 }
+
+
 //พงศกร ขำพิศ

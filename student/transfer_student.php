@@ -41,8 +41,31 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
     <header class="header">
             <a href="stdHome.php"><img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo"></a>
         </header>
+        
         <div class ="container_transfer">
-
+        <nav class="sidebar">
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="link">
+                                <a href ="stdHome.php">
+                                    <span class="text nav-text">หน้าหลัก</span>
+                                </a>
+                            </li>
+                            <li class="link">
+                                <a href ="changepassword.php">
+                                    <span class="text nav-text">เปลี่ยนรหัสผ่าน</span>
+                                </a>
+                            </li>
+                            <li class="link">
+                                <a href ="logout.php">
+                                    <span class="text nav-text">ออกจากระบบ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <form action ="add_transfer.php?ID=<?php echo $Student_id ;?>"class = "box_transfer" method="POST">
                 <?php
                 function displaytable($Student_id,$catagory_group_display,$connect){
