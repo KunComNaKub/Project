@@ -4,7 +4,7 @@ require 'checkStd.php';
 require '../connect.php';
 
 $Subject_id = $_GET['GetID'];
-$sql = "SELECT * FROM subject,transfer_std WHERE subject.Subject_id = $Subject_id ";
+$sql = "SELECT * FROM subject WHERE subject.Subject_id = $Subject_id ";
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
 
@@ -26,16 +26,16 @@ $row = $result->fetch_assoc();
         <h1>เทียบโอนวิชา</h1>
        </div>
        <div>
-        <span>หมวดวิชา :<?php echo $row['Group_course']?></span>
+        <span>หมวดวิชา :<?php echo $row['Group_course'];?></span>
         </div>
         <div>
-            <span>รหัสวิชา :<?php echo $row['Course_code']?></span>
+            <span>รหัสวิชา :<?php echo $row['Course_code'];?></span>
         </div>
         <div>
-            <span>รายวิชาปริญาตรี มทร.ตะวันออก :<?php echo $row['Name_sub']?></span>
+            <span>รายวิชาปริญาตรี มทร.ตะวันออก :<?php echo $row['Name_sub'];?></span>
         </div>
         <div>
-            <span>หน่วยกิต :<?php echo $row['Credit']?></span>
+            <span>หน่วยกิต :<?php echo $row['Credit'];?></span>
         </div>
 
         <div>

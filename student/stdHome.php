@@ -9,6 +9,16 @@ $row = $result->fetch_assoc();
 
 $value_std_confirm = $row['std_confirm_tran'];
 echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
+if($row['Phone_std']==''){
+    $row['Phone_std'] = '-';
+}
+if($row['Email_std'] ==''){
+    $row['Email_std'] = '-';
+}
+if($row['Student_idcard']==''){
+    $row['Student_idcard'] = '-';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +73,7 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                                             <td>เลขประจำตัวประชาชน:</td>
                                             <td class="text-detail-std-td"><?php echo $row['Student_idcard' ];?></td>
                                             <td>ชือนักศึกษา:</td>
-                                            <td class="text-detail-std-td"><?php echo $row['Fname'];?></td>
+                                            <td class="text-detail-std-td"><?php echo $row['Prefix']; echo "&nbsp&nbsp" ; echo $row['Fname'];?></td>
                                             <td>นาสกุล:</td>
                                             <td class="text-detail-std-td"><?php echo $row['Lname'];?></td>
                                         </tr>
@@ -72,6 +82,14 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                                             <td class= "text-detail-std-td"><?php echo $row['Faculty'];?></td>
                                             <td>สาขา:</td>
                                             <td class = "text-detail-std-td"><?php echo $row['Major'];?></td>
+                                            <td>ภาค:</td>
+                                            <td class = "text-detail-std-td"><?php echo $row['Supclass_std'];?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>เบอร์โทรศัพท์</td>
+                                            <td class = "text-detail-std-td"><?php echo $row['Phone_std'];?></td>
+                                            <td>email</td>
+                                            <td class = "text-detail-std-td"><?php echo $row['Email_std'];?></td>
                                         </tr>
                                     </tbody>
                                 </table>

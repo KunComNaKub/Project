@@ -7,7 +7,8 @@ if (isset($_POST['btn-search'])){
     $faculty = $_POST['select-faculty'];
     $major = $_POST['select-major'];
     $student_year = $_POST['student_year'];
-    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' AND Student_year LIKE '%$student_year%'"; 
+    $supclass = $_POST['select-supclass'];
+    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' AND Supclass_std LIKE '%$supclass%' AND Student_year LIKE '%$student_year%'"; 
 }
 else if(isset($_POST['btn-search'])){
     $name = $_POST["searchStd"];
@@ -84,6 +85,12 @@ $result = $connect->query($sql);
                             <option value="การตลาด">การตลาด</option>
                             <option value="บัญชี">บัญชี</option>
                         </select>
+                        <span>ภาค</span>
+                        <select name = "select-supclass" name ="select-supclass">
+                            <option value="">เลือกภาคการเรียนทั้งหมด</option>
+                            <option value="ภาคปกติ">ภาคปกติ</option>
+                            <option value="ภาคสมทบ">ภาคสมทบ</option>
+                        </select>
                         <span></span>
                         <input type="text" placeholder="ปีการศึกษา" name="student_year">
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
@@ -97,12 +104,18 @@ $result = $connect->query($sql);
                             <form class="form" action="add-user-std.php" method="POST" >
                                 <h2>เพิ่มรายชื่อ</h2>
                                 <div class="form-element-std">
-                                    <label for="username">username</label>
+                                    <label for="username">username/รหัสนักศึกษา</label>
                                     <input type="text" id="stdLname" name="username-std" >
                                 </div>
                                 <div class="form-element-std">
                                     <label for="password">password</label>
                                     <input type="text" id="stdLname" name="password-std" >
+                                </div>
+                                <div class="form-element-std">
+                                    <label for="prefix">คำนำหน้าชื่อ </label></br>
+                                    <input type="radio" name="prefix" value = "นาย"> นาย
+                                    <input type="radio" name="prefix" value = "นาง"> นาง
+                                    <input type="radio" name="prefix" value = "นางสาว"> นางสาว
                                 </div>
                                 <div class="form-element-std">
                                     <label for="Fname">ชือ</label>
@@ -129,6 +142,14 @@ $result = $connect->query($sql);
                                         <option value="บัญชี">บัญชี</option>
                                     </select>
                                 </div>
+                                <div class = "form-element-std">
+                                    <label for ="supclass">ภาค</label>
+                                    <select name="supclass-std">
+                                        <option class="plz-select-choice">------- โปรดเลือกลักษณะภาคเรียน -------</option>
+                                        <option value="ภาคปกติ">ภาคปกติ</option>
+                                        <option value="ภาคสมทบ">ภาคสมทบ</option>
+                                    </select>
+                                </div>
                                 <div class="form-element-std">
                                     <label for="student_year">ปีการศึกษา</label>
                                     <input type="text" placeholder="ปีการศึกษา" name="student_year">
@@ -147,15 +168,17 @@ $result = $connect->query($sql);
                                 <td><input type="submit" value="ชื่อ-สกุล" name="stdname" class="input"></td>
                                 <td><input type="submit" value="คณะ" name="stdfac" class="input"></td>
                                 <td><input type="submit" value="สาขา" name="stdname" class="input"></td>
+                                <td><input type="submit" value="ภาค" name="stdname" class="input"></td>
                                 <td><input type="submit" value="ปีการศึกษา" name="stdname" class="input"></td>
                                 <td>ดูข้อมูล/แก้ไข</td>
                             </tr>
                             <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo $row['Fname']; echo "&nbsp&nbsp" ;echo $row['Lname'];?></td>
+                                <td><?php echo $row['Prefix']; echo "&nbsp&nbsp" ;  echo $row['Fname']; echo "&nbsp&nbsp" ;echo $row['Lname'];?></td>
                                 <td><?php echo $row['Faculty'];?></td>
                                 <td><?php echo $row['Major'];?></td>
-                                <td><?php echo $row['Student_year']; ?>
+                                <td><?php echo $row['Supclass_std'];?></td>
+                                <td><?php echo $row['Student_year']; ?></td>
                                 <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-std-modify"></td>
                             </tr>
                             <?php endwhile ?>

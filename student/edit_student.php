@@ -61,8 +61,16 @@ $student_year = $row['Student_year'];
                     </select>
                 </div>
                 <div>
-                    <label?>ปีการศึกษา :</label>
+                    <label>ปีการศึกษา :</label>
                     <input type='text' placeholder="ปีการศึกษา" name='student_year' value= "<?php echo $student_year ?>">
+                </div>
+                <div>
+                    <label>เบอร์โทรศัพท์ :</label>
+                    <input type='text' placeholder="เบอร์โทรศัพท์" name='phone_std'>
+                </div>
+                <div>
+                    <label>email :</label>
+                    <input type='text' placeholder="abcdefg@gmail.com" name='email_std'>
                 </div>
                 <div>
                     <input type="submit" name="btn-update-std-profile" value="ยืนยันอัพเดต" class="confirm-add">

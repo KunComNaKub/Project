@@ -3,12 +3,14 @@ require '../connect.php';
 if(isset($_POST['submit-add-std'])){
     $username = $_POST['username-std'];
     $password = $_POST['password-std'];
+    $prefix = $_POST['prefix'];
     $firstname = $_POST['fname-std'];
     $lastname = $_POST['lname-std'];
     $faculty = $_POST['faculty-std'];
     $major = $_POST['major-std'];
     $student_year = $_POST['student_year'];
-    if($username == "" || $password == "" || $firstname == "" || $lastname == "" || $faculty == "------- โปรดเลือกคณะ -------" || $major == "------- โปรดเลือกสาขา -------" ){
+    $supclass = $_POST['supclass-std'];
+    if($username == "" || $password == "" || $firstname == "" || $lastname == "" || $faculty == "------- โปรดเลือกคณะ -------" || $major == "------- โปรดเลือกสาขา -------"||$prefix == ""||$supclass == ""){
         echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
         window.location.href='admin_manageStd.php';</script>");
     }
@@ -22,7 +24,7 @@ if(isset($_POST['submit-add-std'])){
         }else{
             $query1 = "INSERT INTO user (Username, Password, Role) VALUE ('$username','$password','student')";
             $result1 = mysqli_query($connect,$query1);
-            $query2 = "INSERT INTO student_detail(User_id,Fname,Lname,Faculty,Major,Student_year) VALUE (LAST_INSERT_ID(),'$firstname','$lastname','$faculty','$major','$student_year');";
+            $query2 = "INSERT INTO student_detail(User_id,Prefix,Fname,Lname,Faculty,Major,Supclass_std,Student_year) VALUE (LAST_INSERT_ID(),'$prefix','$firstname','$lastname','$faculty','$major','$supclass','$student_year');";
             $result2 = mysqli_query($connect,$query2);
             if($result1 && $result2){
                 echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');
