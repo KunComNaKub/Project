@@ -32,6 +32,11 @@ require 'checkAdmin.php';
                                 </a>
                             </li>
                             <li class="link">
+                                <a href ="add-user-teacher.php">
+                                    <span class="text nav-text">เพิ่มผู้ใช้งานอาจารย์</span>
+                                </a>
+                            </li>
+                            <li class="link">
                                 <a href ="Admin_manageSub.php">
                                     <span class="text nav-text">จัดการวิชา</span>
                                 </a>

@@ -90,7 +90,7 @@
     list-style: none;
     font-size: 17px;
 }
-.menu-student-link li a{
+.menu-student-link li {
     background-color: red;
     display: flex;
     align-items: center;
@@ -189,5 +189,25 @@
     text-decoration: none;
     background-color: green;
 }
-
+.preview-std.disable,.download-std.disable,.preview-pic.disable{
+    align-items: center;
+    pointer-events: none;
+    margin: 10px 10px;
+    padding: 12px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: gray;
+}
+.sometime.disable,.sometime2.disable{
+    visibility: hidden;
+    display: none;
+}
+.preview-pic{
+    align-items: center;
+    margin: 10px 10px;
+    padding: 12px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: green;
+}
 /*พงศกร*/

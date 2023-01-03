@@ -8,6 +8,8 @@ $result = $connect->query($sql);
 $row = $result->fetch_assoc();
 
 $value_std_confirm = $row['std_confirm_tran'];
+$pic_upload = $row['Pic_grad'];
+echo "<script> var pic_upload = '$pic_upload';</script>";
 echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
 if($row['Phone_std']==''){
     $row['Phone_std'] = '-';
@@ -18,6 +20,7 @@ if($row['Email_std'] ==''){
 if($row['Student_idcard']==''){
     $row['Student_idcard'] = '-';
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -106,13 +109,13 @@ if($row['Student_idcard']==''){
                                                 <span>เทียบโอน</span>
                                             </a>
                                         </li>
-                                        <li class="link">
-                                            <a href="">
+                                        <li class="sometime">
+                                            <a href="Pic-gra.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>อัพโหลดใบ รบ</span>
                                             </a>
                                         </li>
-                                        <li class="link">
-                                            <a href="">
+                                        <li class="sometime2">
+                                            <a href="delete_pic.php?GetID=<?php echo $row['Student_id'];?>">
                                                 <span>ลบใบ รบ</span>
                                             </a>
                                         </li>
@@ -131,13 +134,12 @@ if($row['Student_idcard']==''){
                                 <tbody>
                                     <tr>
                                         <td><h class = "pass">เทียบโอนได้รับการอนุมัติแล้ว</h>
-                                            <h class = "notpass">เทียบโอนไม่ผ่านการอนุมัติ</h>
                                             <h class = "no-tran">ยังไม่ได้ทำการเทียบโอน</h>
                                             <h class = "pending">รอการพิจารณา</h>
                                         </td>
                                         <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</td>
                                         <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=DOWNLOAD" class = "download-std">download</td>
-                                        <td><a href ="" class = "download-std">ดูใบ รบ</td>
+                                        <td><a href ="preview-gra.php?GetID=<?php echo $row['Student_id'];?>" class = "preview-pic">ดูใบ รบ</td>
                                     </tr>
                                 </tbody>
                             </table>

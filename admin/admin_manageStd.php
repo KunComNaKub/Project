@@ -51,6 +51,11 @@ $result = $connect->query($sql);
                                 </a>
                             </li>
                             <li class="link">
+                                <a href ="add-user-teacher.php">
+                                    <span class="text nav-text">เพิ่มผู้ใช้งานอาจารย์</span>
+                                </a>
+                            </li>
+                            <li class="link">
                                 <a href ="Admin_manageSub.php">
                                     <span class="text nav-text">จัดการวิชา</span>
                                 </a>
@@ -75,7 +80,7 @@ $result = $connect->query($sql);
                         <span>คณะ</span>
                         <select name = "select-faculty" name= "select-faculty">
                             <option value="">เลือกคณะทั้งหมด</option>
-                            <option value="บริหารธุรกิจ">บริหารธุรกิจ</option>
+                            <option value="บริหารธุรกิจและเทคโนโลยีสารสนเทศ">บริหารธุรกิจและเทคโนโลยีสารสนเทศ</option>
                             <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                         </select>
                         <span>สาขา</span>
