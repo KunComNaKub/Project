@@ -27,6 +27,10 @@
                     $_SESSION['student_name_login'] = $id;
                     Header('Location: student/stdHome.php');
                     break;
+                case "teacher":
+                    $_SESSION['teacher_name_login'] = $id;
+                    Header('Location: teacher/teacher-home.php');
+                    break;
                 default:
                     echo"<script>alert('สถานะถูกแก้ไข');</script>";
                     Header('Location: login_form.html');

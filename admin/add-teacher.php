@@ -11,7 +11,7 @@ if (isset($_POST['submit-add-T'])) {
 
   if ($username == '' || $password == '' || $prefix == '' || $firstname == '' || $lastname == '' || $faculty == "------- โปรดเลือกคณะ -------" || $major == '------- โปรดเลือกสาขา -------') {
     echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
-    window.location.href='add-user-teacher-admin.php';</script>");
+    window.location.href='add-user-teacher.php';</script>");
   } else {
     $user_check = "SELECT * FROM user WHERE Username = '$username' LIMIT 1";
     $result = mysqli_query($connect, $user_check);
@@ -23,7 +23,7 @@ if (isset($_POST['submit-add-T'])) {
     $user = mysqli_fetch_assoc($result);
     if ($user !== null && $user['Username'] === $username) {
       echo("<script LANGUAGE='Javascript'>window.alert('Username นี่ถูกใช่ไปแล้ว');
-      window.location.href='add-user-teacher-admin.php';</script>");
+      window.location.href='add-user-teacher.php';</script>");
     } else {
       $query1 = "INSERT INTO user (Username, Password, Role) VALUE ('$username','$password','teacher')";
       $result1 = mysqli_query($connect, $query1);
@@ -31,7 +31,7 @@ if (isset($_POST['submit-add-T'])) {
       $result2 = mysqli_query($connect, $query2);
       if ($result1 && $result2) {
         echo("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');
-        window.location.href='add-user-teacher-admin.php';</script>");
+        window.location.href='add-user-teacher.php';</script>");
       } else {
         echo "เกิดข้อผิดพลาด";
       }

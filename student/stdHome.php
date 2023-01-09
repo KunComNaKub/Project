@@ -20,8 +20,6 @@ if($row['Email_std'] ==''){
 if($row['Student_idcard']==''){
     $row['Student_idcard'] = '-';
 }
-
-
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,12 +1,11 @@
 <?php
 session_start();
-require 'checkStd.php';
 require '../connect.php';
-$id = $_SESSION['student_name_login'];
-$sql = "SELECT * FROM student_detail, user WHERE student_detail.User_id = $id AND user.User_id = $id ";
+require 'checkTeacher.php';
+$id = $_GET['GetID'];
+$sql = "SELECT * FROM student_detail WHERE Student_id = $id";
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
-$student_id = $row['Student_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,8 +17,9 @@ $student_id = $row['Student_id'];
         <link rel='stylesheet' type='text/css' media='screen' href='styleteacher.css'>   
     </head>
     <body>
-    <header class="header">
-        <a href="stdHome.php"><img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo"></a>
+<!--web forms-->
+<header class="header">
+        <img src="../picture/มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก.png" class="logo">
         </header>
         <div class="container">
             <nav class="sidebar">
@@ -27,13 +27,13 @@ $student_id = $row['Student_id'];
                     <div class="menu">
                         <ul class="menu-links">
                             <li class="link">
-                                <a href ="stdHome.php">
-                                    <span class="text nav-text">หน้าหลัก</span>
+                                <a href ="teacher-home.php">
+                                    <span class="text nav-text">หน้าหลัก TEACHER</span>
                                 </a>
                             </li>
                             <li class="link">
-                                <a href ="changepassword.php">
-                                    <span class="text nav-text">เปลี่ยนรหัสผ่าน</span>
+                                <a href ="T-estimate-std.php">
+                                    <span class="text nav-text">ประเมินพิจารณา นศ.</span>
                                 </a>
                             </li>
                             <li class="link">
@@ -47,9 +47,17 @@ $student_id = $row['Student_id'];
             </nav>
             <section class="home">
                 <div class="container-box">
-                    <img src = "uploads/<?php echo $row['Pic_grad'];?>" width = "1200" height = "1000"/>
+                    <div>
+                    <a href = "estimate-std.php?GetID=<?php echo $id ?>" class = "">ย้อนกลับไปหน้าพิจารณา
+                    <?php  if($row['Pic_grad'] == ""){
+                        echo "<br>";
+                        echo "ยังไม่มีรูป";
+                        }?>
+                    </div>
+                    <img src = "../student/uploads/<?php echo $row['Pic_grad'];?>" width = "1100" height = "800"/>
                 </div>
             </section>
-    </body>
+
+</body>
 </html>
-<!-- พงศกร -->
+<!-- พงศกร ขำพิศ -->

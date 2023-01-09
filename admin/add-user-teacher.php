@@ -3,13 +3,19 @@ session_start();
 require 'checkAdmin.php';
 require '../connect.php';
 if (isset($_POST['btn-search'])){
-    $name = $_POST['search-name'];
+    $name = $_POST['searchT'];
     $faculty = $_POST['select-faculty'];
     $major = $_POST['select-major'];
-    $sql = "";
+    $sql = "SELECT * FROM teacher WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%'";
 }
-
-
+else if(isset($_POST['btn-search'])){
+    $name = $_POST['search-name'];
+    $sql = "SELECT * FROM teacher WHERE Fname LIKE '%$name%' order by Fname ASC";
+}
+else{
+    $sql = "SELECT * FROM teacher";
+}
+$result = $connect->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -48,6 +54,11 @@ if (isset($_POST['btn-search'])){
                             <li class="link">
                                 <a href ="Admin_manageSub.php">
                                     <span class="text nav-text">จัดการวิชา</span>
+                                </a>
+                            </li>
+                            <li class="link">
+                                <a href ="add-admin.php">
+                                    <span class="text nav-text">เพิ่ม Admin</span>
                                 </a>
                             </li>
                             <li class="link">
@@ -125,7 +136,7 @@ if (isset($_POST['btn-search'])){
                             <label for="faculty">คณะ</label>
                                 <select name="faculty-T">
                                     <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
-                                    <option value="บริหารธุรกิจ">บริหารธุระกิจ</option>
+                                    <option value="บริหารธุรกิจและเทคโนโลยีสารสนเทศ">บริหารธุรกิจและเทคโนโลยีสารสนเทศ</option>
                                     <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                                 </select>
                         </div>
@@ -148,7 +159,7 @@ if (isset($_POST['btn-search'])){
                 </div>
 
 
-                <form action= "add-user-teacher" class ="" method = "POST">
+                <form action= "add-user-teacher.php" class ="" method = "POST">
                     <table> 
                         <tr>
                             <td>ชื่อ-สกุล</td>
@@ -156,7 +167,14 @@ if (isset($_POST['btn-search'])){
                             <td>สาขา</td>
                             <td>ดูข้อมูล/แก้ไข</td>
                         </tr>
-                    <!-- <?php while($row = $result) ?> -->
+                    <?php while($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo $row['Prefix'];echo "&nbsp&nbsp" ; echo $row['Fname']; echo "&nbsp&nbsp" ; echo $row['Lname'];?></td>
+                            <td><?php echo $row['Faculty'];?></td>
+                            <td><?php echo $row['Major'];?></td>
+                            <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-edit"></td>
+                        </tr>
+                        <?php endwhile ?>
                     </table>
                 </form>
             </section>

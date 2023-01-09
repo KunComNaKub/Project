@@ -61,6 +61,11 @@ $result = $connect->query($sql);
                                 </a>
                             </li>
                             <li class="link">
+                                <a href ="add-admin.php">
+                                    <span class="text nav-text">เพิ่ม Admin</span>
+                                </a>
+                            </li>
+                            <li class="link">
                                 <a href ="logout.php">
                                     <span class="text nav-text">ออกจากระบบ</span>
                                 </a>
