@@ -146,8 +146,15 @@ $pdf->MultiCell(80,0,'
 (....................................................)
 '. date("Y/m/d") .'
     ',1,'C',0,1);
+$count = "SELECT COUNT(Student_id)as count1 FROM transfer_std WHERE Student_id = $student_id";
+$resultcount = mysqli_query($connect,$count);
+$rowcount = $resultcount->fetch_assoc();
 
-$pdf->MultiCell(160,0,'ผลการเทียบโอนที่เทียบได้ จำนวน...................รายวิชา       รวม...............หน่วยกิต
+$sumCre = "SELECT SUM(subject.Credit) as SumCredit FROM transfer_std INNER JOIN subject on transfer_std.Subjecttrans_id = subject.Subject_id  WHERE transfer_std.Student_id = $student_id";
+$resultsum = mysqli_query($connect,$sumCre);
+$rowsum = $resultsum->fetch_assoc();
+
+$pdf->MultiCell(160,0,'ผลการเทียบโอนที่เทียบได้ จำนวน........'.$rowcount['count1'].'.........รายวิชา       รวม......'.$rowsum['SumCredit'].'......หน่วยกิต
 เอกสารที่แนบมาพร้อมนี้  1.ใบแสดงผลการศึกษา        จำนวน.............ชุด
 2.ใบผลการทดสอบทางการศึกษาระดับชาติ (V-Net)     จำนวน.............ชุด
 3.แบบเทียบโอนผลการเรียนรายวิชา (รายบุคคล)          จำนวน............ชุด',1,'C',0,0);

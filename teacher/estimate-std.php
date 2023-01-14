@@ -58,6 +58,9 @@ $row2 = $result->fetch_assoc();
                         <div>
                             <h3>วิชาที่<?php echo $row2['Prefix']; echo "&nbsp&nbsp" ; echo $row2['Fname'] ;echo "&nbsp&nbsp" ; echo $row2['Lname'];?> เลือกเทียบโอน</h3>
                         </div>
+                        <div>
+                       
+                        </div>
                         <?php
                         $result = $connect->query($sql);
                         if($result){ ?>
@@ -99,12 +102,12 @@ $row2 = $result->fetch_assoc();
                             <?php endwhile ?>
                         </table>
                         <div>
-                        
-                        <a href ="preview-gra-t.php?GetID=<?php echo $row2['Student_id'];?>" class = "preview-pic">ดูใบ รบ
-                        <td><a href ="../student/pdf_std_tran.php?GetID=<?php echo $row2['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</td>
-                        <div>
                         <input type = "submit" name = "confirm-tran" value = "ยืนยัน">
                         </div>
+                        <a href ="preview-gra-t.php?GetID=<?php echo $row2['Student_id'];?>" class = "preview-pic">ดูใบ รบ</a>
+                        <a href ="../student/pdf_std_tran.php?GetID=<?php echo $row2['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</a>
+                        <a href ="custom-con-tran.php?GetID=<?php echo $row2['Student_id'] ?>">กำหนดใบอนุมัติ</a>  
+
             <div>
                     </form>
                    
