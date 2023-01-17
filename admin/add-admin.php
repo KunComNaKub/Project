@@ -128,7 +128,7 @@ $result = $connect->query($sql);
                             <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><?php echo $row['Prefix'];echo "&nbsp&nbsp" ; echo $row['Fname']; echo "&nbsp&nbsp" ; echo $row['Lname'];?></td>
-                                <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-edit"></td>
+                                <td><a href = "edit-admin.php?GetID=<?php echo $row['User_id'] ?>">แก้ไข</a></td>
                             </tr>
                             <?php endwhile ?>
                         </table>
@@ -141,3 +141,4 @@ $result = $connect->query($sql);
         <script src="popup-add-admin.js"></script>
 </body>
 </html>
+<!-- พงศกร ขำพิศ -->
