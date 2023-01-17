@@ -47,7 +47,7 @@ $student_year = $row['Student_year'];
                     <label>คณะ :</label>
                     <select class="Faculty" name="Faculty">
                         <option>-------โปรดเลือกคณะ-------</option>
-                        <option value="บริหารธุรกิจ"<?php if($Faculty == 'บริหารธุรกิจ'){echo "selected";}?>>บริหารธุระกิจและเทคโนโลยีสารสนเทศ</option>
+                        <option value="บริหารธุรกิจและเทคโนโลยีสารสนเทศ"<?php if($Faculty == 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ'){echo "selected";}?>>บริหารธุระกิจและเทคโนโลยีสารสนเทศ</option>
                         <option value="ศิลปะศาสตร์"<?php if($Faculty == 'ศิลปะศาสตร์'){echo "selected";}?>>ศิลปะศาสตร์</option>
                     </select>
                 </div>

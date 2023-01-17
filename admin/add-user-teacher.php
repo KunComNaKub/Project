@@ -172,7 +172,7 @@ $result = $connect->query($sql);
                             <td><?php echo $row['Prefix'];echo "&nbsp&nbsp" ; echo $row['Fname']; echo "&nbsp&nbsp" ; echo $row['Lname'];?></td>
                             <td><?php echo $row['Faculty'];?></td>
                             <td><?php echo $row['Major'];?></td>
-                            <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-edit"></td>
+                            <td><a href = 'edit-teacher.php?GetID=<?php echo $row['Teacher_id'] ?>'>แก้ไข</a></td>
                         </tr>
                         <?php endwhile ?>
                     </table>

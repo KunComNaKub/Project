@@ -8,9 +8,6 @@ $sql2 = "SELECT * FROM student_detail WHERE Student_id = $id";
 $result = $connect->query($sql2);
 $row2 = $result->fetch_assoc();
 
-if(isset($_POST['submit'])){
-    $name = $_POST['name1'];
-}
 
 ?>
 
@@ -57,11 +54,36 @@ if(isset($_POST['submit'])){
                 <div class= "container-box">
                     <a href = "estimate-std.php?GetID=<?php echo $id ?>" class = "">ย้อนกลับไปหน้าพิจารณา</a>
                 
-                <form action = "../student/pdf_std_tran.php?GetID=<?php echo $row2['Student_id'] ?>&ACTION=VIEW" class = "" method ="POST">
+                <form action = "add-con-tran.php?GetID=<?php echo $id ?>" class = "" method ="POST">
                 <table>
-                    <h1>กำหนดการตรวจสอบเอกสารเทียบโอนผลการเรียนของนักศึกษา</h1>
+                    <h1>กำหนดชื่อผู้พิจารณา กำหนดการตรวจสอบเอกสารเทียบโอนผลการเรียนของนักศึกษา</h1>
                     <tr>
-                        <td></td>
+                        <td>อาจารย์ที่ปรึกษา</td>
+                        <td>หัวหน้าสาขา</td>
+                    </tr>
+                    <tr>
+                        <td><input type = "text" name = "name_adivisor" placeholder= "นาย ชื่อ นามสกุล" required></td>
+                        <td><input type = "text" name = "name_chief" placeholder= "นาย ชื่อ นามสกุล" required></td>
+                    </tr>
+                    <tr>
+                        <td>ประธานกรรมการ</td>
+                        <td>กรรมการ คนที่1</td>
+                        <td>กรรมการ คนที่2</td>
+                    </tr>
+                    <tr>
+                        <td><input type = "text" name = "name_president" placeholder= "นาย ชื่อ นามสกุล" required></td>
+                        <td><input type = "text" name = "name_1" placeholder= "นาย ชื่อ นามสกุล" required></td>
+                        <td><input type = "text" name = "name_2" placeholder= "นาย ชื่อ นามสกุล" required></td>
+                    </tr>
+                    <tr>
+                        <td>กรรมการ คนที่3</td>
+                        <td>กรรมการ คนที่4</td>
+                        <td>กรรมการ คนที่5</td>
+                    </tr>
+                    <tr>
+                        <td><input type = "text" name = "name_3" placeholder= "นาย ชื่อ นามสกุล"></td>
+                        <td><input type = "text" name = "name_4" placeholder= "นาย ชื่อ นามสกุล"></td>
+                        <td><input type = "text" name = "name_5" placeholder= "นาย ชื่อ นามสกุล"></td>
                     </tr>
                 </table>
                 <input type ="submit" value = "submit" name = "submit">

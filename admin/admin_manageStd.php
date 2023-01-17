@@ -189,7 +189,7 @@ $result = $connect->query($sql);
                                 <td><?php echo $row['Major'];?></td>
                                 <td><?php echo $row['Supclass_std'];?></td>
                                 <td><?php echo $row['Student_year']; ?></td>
-                                <td><input type="submit" value="ดูข้อมูล/แก้ไข" name= "btn-std-modify"></td>
+                                <td><a href = "edit_std.php?GetID=<?php echo $row['Student_id']?>">edit</a></td>
                             </tr>
                             <?php endwhile ?>
                         </table>
