@@ -1,10 +1,33 @@
 <?php
-    // session_start();
-    //     // echo '<pre>';
-    //     // print_r($_POST);
-    //     // echo '</pre>';
-    // exit();
-    require '../connect.php';
+	session_start();
+	require 'checkStd.php';
+	require '../connect.php';
+	$id = $_SESSION['student_name_login'];
+	if(isset($_POST['submit'])){
+		$oldpass = $_POST['oldpass'];
+		$newpass_1 = $_POST['newpass1'];
+		$newpass_2 = $_POST['newpass2'];
+
+		$sql = "SELECT * FROM user WHERE User_id = $id";
+		$result = mysqli_query($connect,$sql);
+		$row = $result->fetch_assoc();
+
+		if($row['Password'] != $oldpass){
+			echo ("<script LANGUAGE='Javascript'>window.alert('รหัสผ่านเดิมไม่ถูกต้อง');
+			window.location.href='changepassword.php';</script>");
+		}elseif($newpass_1 != $newpass_2){
+			echo ("<script LANGUAGE='Javascript'>window.alert('รหัสผ่านไม่ตรงกัน');
+                window.location.href='changepassword.php';</script>");
+		}else{
+			$sql2 = "UPDATE user SET Password = '$newpass_1' WHERE User_id = $id";
+			$result2 = mysqli_query($connect,$sql2);
+			if($result2){
+			echo ("<script LANGUAGE='Javascript'>window.alert('เปลี่ยนรหัสผ่านสำเร็จ');
+            window.location.href='stdHome.php';</script>");
+			}
+		}
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,21 +55,21 @@
 				<span class="login100-form-title p-b-41">
 					Change Password
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5">
+				<form class="login100-form validate-form p-b-33 p-t-5" action ="" method = "POST">
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="passwordold" name="pass" placeholder="Old Password...">
+						<input class="input100" type="passwordold" name="oldpass" placeholder="Old Password...">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password1" name="pass" placeholder="New Password...">
+						<input class="input100" type="password1" name="newpass1" placeholder="New Password...">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password2" name="pass" placeholder="Confirm Password...">
+						<input class="input100" type="password2" name="newpass2" placeholder="Confirm Password...">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name = "submit">
 							Confirm Password
 						</button>
 					</div>
@@ -68,3 +91,5 @@
 
 </body>
 </html>
+<!-- คเณศ -->
+<!-- พงศกร -->

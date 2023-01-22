@@ -37,10 +37,9 @@
                     break;
             }
 
-
         }
         else{
-            echo "<scripts>alert('ชื่อผู้ใช่งานผิด');</scripts>";
+            echo ("<script LANGUAGE='Javascript'>window.alert('รหัสผ่านไม่ถูกต้อง');</script>");
             header('Refresh:0;url=index.html');
         }
     }
