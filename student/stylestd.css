@@ -65,18 +65,23 @@
     width: 100%;
 }
 .text-detail-std{
-    background-color: #f32963;
+    background-color: #ffa6bf;
     padding:10px;
-    border-collapse: separate;
-    border-spacing: 0 10px;
+    border-collapse: collapse;
+    
 }
 .text-detail-std .text-detail-std-td{
  padding-right: 100px;
  padding-left: 10px;
+
+ 
 }
 .text-detail-std td{
-    text-align: end;
-}   
+    border: 1px solid #ddd;
+    padding:10px;
+}
+
+
 .box-detail-std{
     height: 70%;
     width: 100%;
@@ -91,14 +96,38 @@
     font-size: 17px;
 }
 .menu-student-link li {
-    background-color: red;
-    display: flex;
-    align-items: center;
-    margin: 10px 10px;
-    padding: 12px 12px;
-    border-radius: 5px;
-    text-decoration: none;
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 20px;
+  margin-right:10px;
+  margin-top:5px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+.menu-student-link li:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
+  }
+  @media (min-width: 768px) {
+    .menu-student-link li {
+      padding: 10px 30px;
+    }
+  }
+
 .container-edit-std{
     position: absolute;
     top: 50%;
@@ -107,7 +136,9 @@
     transform: translate(-50%,-50%) scale(1.25);
     padding: 20px 20px;
     border-radius: 7px;
-    background-color: rgb(230, 81, 123);
+    background-color: #ffa6bf;
+    
+    
 }
 .box_transfer td{
     border: 1px solid;
@@ -168,27 +199,76 @@
     background-color: gray;
 }
 .box-std-tran{
-    background-color: #f32963;
-    padding:10px;
+    background-color: #ffa6bf;
+    padding:20px 1px;
     border-collapse: separate;
     border-spacing: 0 10px;
+    margin-top: 10px;
+
+    
 }
 .preview-std{
-    align-items: center;
-    margin: 10px 10px;
-    padding: 12px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: rgb(241, 238, 14);
+    background-color: #f3f70d;
+  border: 1px solid #d3f31f;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 20px;
+  margin-right:10px;
+  margin-top:5px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+.preview-std:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  }
+  @media (min-width: 768px) {
+    .preview-std {
+      padding: 10px 30px;
+    }
+  }
+
 .download-std{
-    align-items: center;
-    margin: 10px 10px;
-    padding: 12px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: green;
-}
+    background-color: #48ff00;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 20px;
+    margin-right:10px;
+    margin-top:5px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .download-std:hover {
+      box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    }
+    @media (min-width: 768px) {
+      .download-std {
+        padding: 10px 30px;
+      }
+    }
 .preview-std.disable,.download-std.disable,.preview-pic.disable{
     align-items: center;
     pointer-events: none;
@@ -203,11 +283,36 @@
     display: none;
 }
 .preview-pic{
-    align-items: center;
-    margin: 10px 10px;
-    padding: 12px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: green;
+    background-color: #0d86f7;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 20px;
+    margin-right:10px;
+    margin-top:5px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .preview-pic:hover {
+      box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    }
+    @media (min-width: 768px) {
+      .preview-pic {
+        padding: 10px 30px;
+      }
+    }
+.box-std-tran .pending{
+    background-color: #f3f70d;
 }
 /*พงศกร*/

@@ -6,7 +6,6 @@
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: #f32963;
     padding: 15px 80px;
     
@@ -56,10 +55,12 @@
     position: absolute;
     top:22%;
     left: 50%;
-    font-size: 30px;
+    font-size: 35px;
     background-color: #f32963;
     transform: translate(-50%,-70%);
-
+    padding: 10px;
+    border-radius: 5px;
+    color:white ;
 }
 .main-logo{
     position: absolute;
@@ -89,7 +90,7 @@
     left: 50%;
     transform: translate(-50%,-70%);
     width: 30%;
-    background-color: bisque;
+    background-color: rgb(255, 132, 173);
     border-radius: 15px;
 }
 .center h1{
