@@ -68,6 +68,7 @@
     background-color: #ffa6bf;
     padding:10px;
     border-collapse: collapse;
+    border-radius: 5px;
     
 }
 .text-detail-std .text-detail-std-td{
@@ -95,6 +96,7 @@
     list-style: none;
     font-size: 17px;
 }
+    
 .menu-student-link li {
   background-color: #13aa52;
   border: 1px solid #13aa52;
@@ -103,12 +105,9 @@
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
-  font-weight: 400;
   outline: none;
-  outline: 0;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin-right:10px;
   margin-top:5px;
   text-align: center;
@@ -122,11 +121,7 @@
     box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
     transform: translateY(-2px);
   }
-  @media (min-width: 768px) {
-    .menu-student-link li {
-      padding: 10px 30px;
-    }
-  }
+
 
 .container-edit-std{
     position: absolute;
@@ -134,11 +129,12 @@
     left: 50%;
     width: 600px;
     transform: translate(-50%,-50%) scale(1.25);
-    padding: 20px 20px;
     border-radius: 7px;
     background-color: #ffa6bf;
-    
-    
+    text-align:center;
+    padding: 0px;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 .box_transfer td{
     border: 1px solid;
@@ -158,11 +154,13 @@
     display: flex;
     flex-direction: column;
     width: 150vh;
-    background-color: red;
+
 }
 .box_transfer_social{
     margin: 15px 20px;
-    background-color: aqua;
+    background-color: #ffa6bf;
+    padding: 10px;
+    border-radius: 8px;
 
 }
 #submit2{
@@ -204,6 +202,7 @@
     border-collapse: separate;
     border-spacing: 0 10px;
     margin-top: 10px;
+    border-radius:  10px;
 
     
 }
@@ -313,6 +312,124 @@
       }
     }
 .box-std-tran .pending{
-    background-color: #f3f70d;
+    background-color: #ff7b1bd1;
+    padding:10px;
+    border-radius: 8px;
+    margin-right:20px;
+    font-size:20px;
 }
+.box-std-tran .pass{
+    background-color: #41ff1bd1;
+    padding:10px;
+    border-radius: 8px;
+    margin-right:20px;
+    font-size:20px;
+}
+.box-std-tran .no-tran{
+    background-color: #463358d1;
+    padding:10px;
+    border-radius: 8px;
+    margin-right:20px;
+    font-size:20px;
+    color:white;
+}
+.v1{
+    border-left: 2px solid #766f7cea;
+    padding-right: 10px;
+    height: 30px;
+}
+.container-edit-std label{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    clear:both;
+    float:left;
+    margin-right:15px;
+    height: 20px;
+    width: 200px;
+}
+.container-edit-std input,.container-edit-std select{
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+.container-edit-std input[type=submit] {
+    float:none;
+}
+.btn-confirm-tran{
+    background-color: #13aa52;
+    border: 1px solid #13aa52;
+}
+.btn-cancle_tran{
+    background-color: #da1919;
+    border: 1px solid #da1919;
+}
+.btn-confirm-tran,.btn-cancle_tran{
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btn-confirm-tran:hover,.btn-cancle_tran:hover{
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+@media (min-width: 768px) {
+    .btn-confirm-tran,.btn-cancle_tran {
+      padding: 10px 30px;
+    }
+  }
+.box-add-pic{
+    transform: translate(-50%,-50%) scale(1.25);
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    background-color: #ffa6bf;
+    padding: 20px;
+    border-radius: 10px;
+}
+.box-add-pic table{
+    margin: 10px;
+}
+.box-add-pic input[type=submit]{
+    background-color: #13aa52;
+    border: 1px solid #13aa52;
+    border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 5px 10px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.box-add-pic input[type=submit]:hover{
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
 /*พงศกร*/

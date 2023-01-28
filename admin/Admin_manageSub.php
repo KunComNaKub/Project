@@ -208,7 +208,7 @@ $result = $connect->query($sql);
                             <td><?php echo $row['Name_sub'];?></td>
                             <td><?php echo $row['Credit'];?></td>
                             <td><?php echo $row['Sub_Year'];?></td>
-                            <td><a href = "edit_subject.php?GetID=<?php echo $row['Subject_id']?>">edit</a></td>
+                            <td><a href = "edit_subject.php?GetID=<?php echo $row['Subject_id']?>" class ="btn-edit-subject">edit</a></td>
                         </tr>
                         <?php endwhile ?>
                     </table>

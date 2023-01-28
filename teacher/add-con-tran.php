@@ -39,7 +39,9 @@ if(isset($_POST['submit'])){
     else{
         $query = "INSERT INTO detail_confirm_tran(Student_id,name_advisor,name_chief,name_president,name_1,name_2,name_3,name_4,name_5) value ('$Student_id','$name_adivisor','$name_chief','$name_president','$name1','$name2','$name3','$name4','$name5') ";
         $result = mysqli_query($connect,$query);
-        if($result){
+        $query2 = "UPDATE student_detail SET std_confirm_tran = '2' WHERE Student_id = '$Student_id' ";
+        $result2 = mysqli_query($connect,$query2);
+        if($result && $result2){
             echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');
             window.location.href='estimate-std.php?GetID=$id';</script>");
         }

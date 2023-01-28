@@ -29,7 +29,6 @@ if(isset($_POST['submit'])){
 
 }
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,18 +87,18 @@ if(isset($_POST['submit'])){
             <section class="home">
                 <div class= "container-box">
                 <h2>รายละเอียด นศ <?php echo $row['Prefix']; echo '&nbsp'; echo $row['Fname']; echo '&nbsp&nbsp'; echo $row['Lname']; ?></h2>
-                <form action = "" Method = 'POST'>
+                <form action = "" Method = 'POST' class = "container-edit-detail-std">
                 <table>
                     <tr>
-                        <td>username/รหัสนักศึกษา</td>
+                        <td class = "title-edit-std">username/รหัสนักศึกษา</td>
                         <td><input type = 'text' name = "username" value = "<?php echo $row['Username'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
+                        <td class = "title-edit-std">Password</td>
                         <td><input type = 'text' name = "password" VALUE = "<?php echo $row['Password'] ?>"></td>
                     </tr>
                     <tr>
-                        <td>คณะ</td>
+                        <td class = "title-edit-std">คณะ</td>
                         <td><select class="Faculty" name="Faculty">
                             <option>-------โปรดเลือกคณะ-------</option>
                             <option value="บริหารธุรกิจและเทคโนโลยีสารสนเทศ"<?php if($row['Faculty'] == 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ'){echo "selected";}?>>บริหารธุระกิจและเทคโนโลยีสารสนเทศ</option>
@@ -108,7 +107,7 @@ if(isset($_POST['submit'])){
                         </td>
                     </tr>
                     <tr>
-                        <td>สาขา</td>
+                        <td class = "title-edit-std">สาขา</td>
                         <td><select class="Major" name = "Major">
                         <option>-------โปรดเลือกสาขา-------</option>
                         <option value="วิทยาการสารสนเทศ"<?php if($row['Major'] == 'วิทยาการสารสนเทศ'){echo "selected";}?>>วิทยาการสารสนเทศ</option>
@@ -117,7 +116,7 @@ if(isset($_POST['submit'])){
                     </select></td>
                     </tr>
                     <tr>
-                        <td>ภาค</td>
+                        <td class = "title-edit-std">ภาค</td>
                         <td><select class= "supclass" name = "supclass">
                             <option>-----โปรดเลือกภาคการเรียน-----</option>
                             <option value="ภาคปกติ"<?php if($row['Supclass_std'] == 'ภาคปกติ'){echo "selected";} ?>>ภาคปกติ</option>
@@ -125,20 +124,20 @@ if(isset($_POST['submit'])){
                         </td>
                     </tr>
                     <tr>
-                        <td>ปีการศึกษา</td>
+                        <td class = "title-edit-std">ปีการศึกษา</td>
                         <td><input type = "text" name = 'std-year' value = '<?php echo $row ['Student_year'] ?>'></td>
                     </tr>
                     <tr>
-                        <td>โทรศัพท์</td>
+                        <td class = "title-edit-std">โทรศัพท์</td>
                         <td><input type = 'text' name = 'phone' value = '<?php echo $row ['Phone_std'] ?>' ></td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td class = "title-edit-std">Email</td>
                         <td><input type = 'text' name = 'email-std' value = '<?php echo $row ['Email_std']?>'></td>
                     </tr>
                 </table>
-                    <input type = "submit" name ='submit' value = ยืนยัน>
-                    <a href = "admin_manageStd.php">ย้อนกลับ</a>
+                    <input type = "submit" class= "btn-confirm-edit-std"name ='submit' value = ยืนยัน>
+                    <a href = "admin_manageStd.php" class = "btn-back-edit-std">ย้อนกลับ</a>
                 </form>
                 </div>
             </section>

@@ -10,7 +10,8 @@ $sql = "SELECT * FROM transfer_std INNER JOIN subject ON transfer_std.Subjecttra
 $sql2 = "SELECT * FROM student_detail WHERE Student_id = $Student_id";
 $result = $connect->query($sql2);
 $row2 = $result->fetch_assoc();
-
+$num = $row2['teacher_con'];
+echo "<script> var num = '$num'</script>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +35,11 @@ $row2 = $result->fetch_assoc();
                             <li class="link">
                                 <a href ="teacher-home.php">
                                     <span class="text nav-text">หน้าหลัก TEACHER</span>
+                                </a>
+                            </li>
+                            <li class="link">
+                                <a href ="change_password.php">
+                                    <span class="text nav-text">เปลี่ยนรหัส Password</span>
                                 </a>
                             </li>
                             <li class="link">
@@ -102,11 +108,13 @@ $row2 = $result->fetch_assoc();
                             <?php endwhile ?>
                         </table>
                         <div>
-                        <input type = "submit" name = "confirm-tran" value = "ยืนยัน">
+                        <input class="btn-confirm" type = "submit" name = "confirm-tran" value = "ยืนยัน">
                         </div>
+                        <div class ='box-btn'>
                         <a href ="preview-gra-t.php?GetID=<?php echo $row2['Student_id'];?>" class = "preview-pic">ดูใบ รบ</a>
                         <a href ="../student/pdf_std_tran.php?GetID=<?php echo $row2['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</a>
-                        <a href ="custom-con-tran.php?GetID=<?php echo $row2['Student_id'] ?>">กำหนดใบอนุมัติ</a>  
+                        <a href ="custom-con-tran.php?GetID=<?php echo $row2['Student_id'] ?>" class="btn-custom">กำหนดใบอนุมัติ</a>  
+                                </div>
 
             <div>
                     </form>
@@ -118,5 +126,6 @@ $row2 = $result->fetch_assoc();
                     }
                     ?>
     </body>
+    <script src="btn-unclick.js"></script>
 </html>
 <!-- พงศกร ขำพิศ -->

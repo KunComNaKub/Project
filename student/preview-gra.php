@@ -15,7 +15,7 @@ $student_id = $row['Student_id'];
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Page Title</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='styleteacher.css'>   
+        <link rel='stylesheet' type='text/css' media='screen' href='stylestd.css'>   
     </head>
     <body>
     <header class="header">

@@ -135,6 +135,7 @@ if($row['Student_idcard']==''){
                                             <h class = "no-tran">ยังไม่ได้ทำการเทียบโอน</h>
                                             <h class = "pending">รอการพิจารณา</h>
                                         </td>
+                                        <td class = "v1"></td>
                                         <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</td>
                                         <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=DOWNLOAD" class = "download-std">download</td>
                                         <td><a href ="preview-gra.php?GetID=<?php echo $row['Student_id'];?>" class = "preview-pic">ดูใบ รบ</td>

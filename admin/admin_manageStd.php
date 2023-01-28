@@ -139,7 +139,7 @@ $result = $connect->query($sql);
                                     <label for="faculty">คณะ</label>
                                     <select name="faculty-std">
                                         <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
-                                        <option value="บริหารธุรกิจ">บริหารธุระกิจ</option>
+                                        <option value="บริหารธุรกิจและเทคโนโลยีสารสนเทศ">บริหารธุรกิจและเทคโนโลยีสารสนเทศ</option>
                                         <option value="ศิลปะศาสตร์">ศิลปะศาสตร์</option>
                                     </select>
                                 </div>

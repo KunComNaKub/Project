@@ -77,23 +77,25 @@ if(isset($_POST['submit'])){
             <section class="home">
                 <div class= "container-box">
                     <h2>เปลี่ยนรหัสผ่าน Password<h2>
-                        <form action = "" method = "POST">
-                            <div>
-                                <label>Password เดิม</label>
-                                <input type = 'text' name = 'old-password'>
-                            </div>
-                            <div>
-                                <label>Password ใหม่</label>
-                                <input type = 'text' name = 'new-password' required>
-                            </div>
-                            <div>
-                                <label>ยืนยัน Password ใหม่</label>
-                                <input type = 'text' name = 'c-new-password' required>
-                            </div>
-                            <div>
-                                <input type = "submit" name ='submit' value = ยืนยัน>
+                        <div class="container-CP">
+                            <form action = "" method = "POST">
+                                <div>
+                                    <label>Password เดิม</label>
+                                    <input type = 'text' name = 'old-password'>
+                                </div>
+                                <div>
+                                    <label>Password ใหม่</label>
+                                    <input type = 'text' name = 'new-password' required>
+                                </div>
+                                <div>
+                                    <label>ยืนยัน Password ใหม่</label>
+                                    <input type = 'text' name = 'c-new-password' required>
+                                </div>
+                                <div class="btn-submit">
+                                    <input type = "submit"  name ='submit' value = ยืนยัน>
+                                </div>
+                            </form>
                         </div>
-                        </form>
                 </div>
             </section>
         </div>

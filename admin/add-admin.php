@@ -84,34 +84,34 @@ $result = $connect->query($sql);
                         <div class="close-btn">&times;</div>
                             <form class ="form" action="add-admin-ago.php" method="POST">
                                 <h2>เพิ่มผู้งานAdmin</h2>
-                                <div class="">
+                                <div class="form-element-admin">
                                     <label for = "username">username</label>
                                     <input type = "text" id="Ausername" name = "Ausername"> 
                                 </div>
 
-                                <div class="">
+                                <div class="form-element-admin">
                                     <label for = "password">password</label>
                                     <input type = "text" id="Apassword" name = "Apassword"> 
                                 </div>
 
-                                <div class= "">
+                                <div class= "form-element-admin">
                                     <label for="prefix">คำนำหน้าชื่อ </label></br>
                                     <input type="radio" name="prefix" value = "นาย"> นาย
                                     <input type="radio" name="prefix" value = "นาง"> นาง
                                 </div>
                                 
-                                <div class = "">
+                                <div class = "form-element-admin">
                                     <label for="Fname">ชือ</label>
                                     <input type="text" id="AFname" name="fname-A" >
                                 </div>
 
 
-                                <div class = "">
+                                <div class = "form-element-admin">
                                     <label for="Lname">นามสกุล</label>
                                     <input type="text" id="ALname" name="Lname-A" >
                                 </div>
 
-                                <div class="">
+                                <div class="form-element-admin">
                                     <input type="submit" name="submit-add-A" value="ยืนยัน" class="confirm-add">
                                 </div>
 
@@ -119,7 +119,7 @@ $result = $connect->query($sql);
                         </div>
                     </div>
 
-                    <form action = "add-admin.php" class ="" method = "POST">
+                    <form action = "add-admin.php" class ="display-user-admin" method = "POST">
                         <table>
                             <tr>
                                 <td>ชื่อ-สกุล</td>
@@ -128,7 +128,7 @@ $result = $connect->query($sql);
                             <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><?php echo $row['Prefix'];echo "&nbsp&nbsp" ; echo $row['Fname']; echo "&nbsp&nbsp" ; echo $row['Lname'];?></td>
-                                <td><a href = "edit-admin.php?GetID=<?php echo $row['User_id'] ?>">แก้ไข</a></td>
+                                <td><a href = "edit-admin.php?GetID=<?php echo $row['User_id'] ?>" class = "edit-user-admin">แก้ไข</a></td>
                             </tr>
                             <?php endwhile ?>
                         </table>

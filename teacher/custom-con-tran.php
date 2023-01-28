@@ -36,6 +36,11 @@ $row2 = $result->fetch_assoc();
                                 </a>
                             </li>
                             <li class="link">
+                                <a href ="change_password.php">
+                                    <span class="text nav-text">เปลี่ยนรหัส Password</span>
+                                </a>
+                            </li>
+                            <li class="link">
                                 <a href ="T-estimate-std.php">
                                     <span class="text nav-text">ประเมินพิจารณา นศ.</span>
                                 </a>

@@ -100,19 +100,19 @@ $result = $connect->query($sql);
                 <div class="overlay">
                     <div class = "popup-add-teacher">
                     <div class="close-btn">&times;</div>
-                    <form class="form" action ="add-teacher.php" method="POST">
+                    <form class="form-add-teacher" action ="add-teacher.php" method="POST">
                         <h2>เพิ่มผู้งานอาจารย์</h2>
-                        <div class="">
+                        <div class="form-element-teacher">
                             <label for = "username">username</label>
                             <input type = "text" id="Tusername" name = "Tusername"> 
                         </div>
                         
-                        <div class="">
+                        <div class="form-element-teacher">
                             <label for = "password">password</label>
                             <input type = "text" id="Tpassword" name = "Tpassword"> 
                         </div>
                         
-                        <div class= "">
+                        <div class= "form-element-teacher">
                             <label for="prefix">คำนำหน้าชื่อ </label></br>
                             <input type="radio" name="prefix" value = "นาย"> นาย
                             <input type="radio" name="prefix" value = "นาง"> นาง
@@ -122,17 +122,17 @@ $result = $connect->query($sql);
                             <input type="radio" name="prefix" value = "ดร."> ดร.
                         </div>
 
-                        <div class = "">
+                        <div class = "form-element-teacher">
                             <label for="Fname">ชือ</label>
                             <input type="text" id="TFname" name="fname-T" >
                         </div>
 
-                        <div class = "">
+                        <div class = "form-element-teacher">
                             <label for="Lname">นามสกุล</label>
                             <input type="text" id="LFname" name="Lname-T" >
                         </div>
 
-                        <div class = "">
+                        <div class = "form-element-teacher">
                             <label for="faculty">คณะ</label>
                                 <select name="faculty-T">
                                     <option class="plz-select-choice">------- โปรดเลือกคณะ -------</option>
@@ -141,7 +141,7 @@ $result = $connect->query($sql);
                                 </select>
                         </div>
 
-                        <div class="">
+                        <div class="form-element-teacher">
                                 <label for="major">สาขา</label>
                                 <select name="major-T">
                                     <option class="plz-select-choice">------- โปรดเลือกสาขา -------</option>
@@ -151,7 +151,7 @@ $result = $connect->query($sql);
                                 </select>
                         </div>
 
-                        <div class="">
+                        <div class="form-element-teacher">
                             <input type="submit" name="submit-add-T" value="ยืนยัน" class="confirm-add">
                         </div>
                     </form>
@@ -159,7 +159,7 @@ $result = $connect->query($sql);
                 </div>
 
 
-                <form action= "add-user-teacher.php" class ="" method = "POST">
+                <form action= "add-user-teacher.php" class ="display-user-teacher" method = "POST">
                     <table> 
                         <tr>
                             <td>ชื่อ-สกุล</td>
@@ -172,7 +172,7 @@ $result = $connect->query($sql);
                             <td><?php echo $row['Prefix'];echo "&nbsp&nbsp" ; echo $row['Fname']; echo "&nbsp&nbsp" ; echo $row['Lname'];?></td>
                             <td><?php echo $row['Faculty'];?></td>
                             <td><?php echo $row['Major'];?></td>
-                            <td><a href = 'edit-teacher.php?GetID=<?php echo $row['Teacher_id'] ?>'>แก้ไข</a></td>
+                            <td><a href = 'edit-teacher.php?GetID=<?php echo $row['Teacher_id'] ?>' class = "btn-edit-teacher">แก้ไข</a></td>
                         </tr>
                         <?php endwhile ?>
                     </table>

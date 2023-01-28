@@ -1,6 +1,10 @@
 <?php
 session_start();
 require 'checkTeacher.php';
+require '../connect.php';
+$Count_std = "SELECT COUNT(Student_id) as totalStd, COUNT(CASE WHEN std_confirm_tran = 1 THEN 1 END) as totalstdpen,COUNT(CASE WHEN std_confirm_tran = 0 THEN 1 END)as totalstdnot , COUNT(CASE WHEN std_confirm_tran = 2 THEN 1 END) as Totalpass, COUNT(CASE WHEN teacher_con = 1 THEN 1 END) as teacher_con_cus,COUNT(CASE WHEN teacher_con = 0 THEN 1 END) AS teache_not_cus FROM student_detail";
+$result = $connect->query($Count_std);
+$totalstd =$result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,10 +51,36 @@ require 'checkTeacher.php';
             </nav>
             <!--content-->
             <section class="home">
-                <div class="text">test</div>
-                <?php
-                echo $_SESSION['teacher_name_login']
-                ?>
+                <div class="container-box">
+                    <div class ="display-box-showall-std">
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนทั้งหมด</label></br></br>
+                                <label><?php echo $totalstd['totalStd'] ?></label>
+                            </div>
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนที่อยู่ระหว่างดำเนินการ</label></br></br>
+                                <label><?php echo $totalstd['totalstdpen'] ?></label>
+                            </div>
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนที่ยังไม่ได้ดำเนินการเทียบโอนรายวิชา</label></br></br>
+                                <label><?php echo $totalstd['totalstdnot'] ?></label>
+                            </div>
+                    </div>
+                    <div class ="display-box-showall-std">
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนที่ยได้รับการอนุมัติแล้ว</label></br></br>
+                                <label><?php echo $totalstd['Totalpass'] ?></label>
+                            </div>
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนที่ได้รับการอนุมัติและได้ถูกกำหนดกรรมการพิจารณาเทียบโอนแล้ว</label></br></br>
+                                <label><?php echo $totalstd['teacher_con_cus'] ?></label>
+                            </div>
+                            <div class = "display-box">
+                                <label>จำนวนนักเรียนที่ได้รับการอนุมัติและยังไม่ได้กำหนดกรรมการพิจารณาเทียบโอน</label></br></br>
+                                <label><?php echo $totalstd['teache_not_cus'] ?></label>
+                            </div>
+                    </div>
+                </div>
             </section>
         </div>
 

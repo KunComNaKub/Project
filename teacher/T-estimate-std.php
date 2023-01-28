@@ -63,7 +63,7 @@ require '../connect.php';
                                     ?>
                                     <div class = "box-estimate">
                                         <h3><?php echo $TSfaculty;echo "&nbsp;&nbsp;" ; echo $TSmajor; ?></h3> 
-                                        <div class="">
+                                        <div class="box-estimate2">
                                             <table>
                                                 <tr>
                                                     <td>ชื่อ</td>
@@ -89,7 +89,9 @@ require '../connect.php';
                                                 </tr>
                                             </table>
                                         </div>
+                                        
                                     </div>
+                                    <hr style="width:100%;text-align:left;margin-left:0;margin-top:10px;color:black;height:3px;background-color:black">
                                     <?php
                                 } else{
                                     echo "ERROR: " . $connect->error;
@@ -98,6 +100,7 @@ require '../connect.php';
             
                             displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','วิทยาการสารสนเทศ',$connect);
                             displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','การตลาด',$connect);
+                            displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','บัญชี',$connect);
                     
                                 
                         ?>

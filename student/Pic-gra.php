@@ -78,6 +78,7 @@ if (isset($_POST['submit'])) {
                 </div>
             </nav>
     <form action="Pic-gra.php" method="post" enctype="multipart/form-data">
+      <div class = "box-add-pic">
       <h3>กรุณาอัพโหลดรูปภาพไฟล์ jpg หรือ png</h3>
       <h3>ตั่งชื่อไฟล์ ชื่อ-นามสกุล-รหัสนักศึกษา</h3>
       <table border= 5 width = "400">
@@ -91,6 +92,7 @@ if (isset($_POST['submit'])) {
         </tr>
       </table>
     <input type="submit" value="อัพโหลด" name="submit">
+</div>
   </form>
     </body>
 </html>

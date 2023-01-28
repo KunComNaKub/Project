@@ -124,7 +124,10 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
 
                 displaytable($Student_id,"กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์",$connect);
                 displaytable($Student_id,"กลุ่มภาษา",$connect);
-                
+                displaytable($Student_id,"กลุ่มวิทยาศาสตร์และคณิตศาสตร์",$connect);
+                displaytable($Student_id,"กลุ่มบูรณาการ",$connect);
+                displaytable($Student_id,"กลุ่มวิชาแกน",$connect);
+                displaytable($Student_id,"กลุ่มวิชาฝึกงานและประสบการณ์",$connect);
                 ?>
 
 
