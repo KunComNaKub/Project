@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2023 at 04:10 PM
+-- Generation Time: Jan 28, 2023 at 06:29 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -56,8 +56,19 @@ CREATE TABLE `detail_confirm_tran` (
   `name_chief` varchar(100) NOT NULL,
   `name_president` varchar(100) NOT NULL,
   `name_1` varchar(100) NOT NULL,
-  `name_2` varchar(100) NOT NULL
+  `name_2` varchar(100) NOT NULL,
+  `name_3` varchar(100) NOT NULL,
+  `name_4` varchar(100) NOT NULL,
+  `name_5` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `detail_confirm_tran`
+--
+
+INSERT INTO `detail_confirm_tran` (`id`, `Student_id`, `name_advisor`, `name_chief`, `name_president`, `name_1`, `name_2`, `name_3`, `name_4`, `name_5`) VALUES
+(6, 4, 'asdasddasdas', 'dasasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasd'),
+(7, 5, 'asd', 'asd', 'asdasdasd', 'asdasdasd', 'asdasdasd', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -79,19 +90,20 @@ CREATE TABLE `student_detail` (
   `Phone_std` int(11) DEFAULT NULL,
   `Email_std` text,
   `Pic_grad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `std_confirm_tran` int(1) NOT NULL DEFAULT '0'
+  `std_confirm_tran` int(1) NOT NULL DEFAULT '0',
+  `teacher_con` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `student_detail`
 --
 
-INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`, `Student_idcard`, `Supclass_std`, `Student_year`, `Phone_std`, `Email_std`, `Pic_grad`, `std_confirm_tran`) VALUES
-(3, 3, '', 'test23', 'test23', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 11020031, 'ภาคสมทบ', 2556, NULL, NULL, NULL, 0),
-(4, 36, 'นาย', 'test12', 'test12', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคปกติ', 2556, 123456, 'asasd@gmail.com', '', 1),
-(5, 37, 'นาย', 'asdasdasdasd', 'asdasdasdasd', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 1),
-(7, 38, 'นาย', '02656565asd', '02656565asd', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 1),
-(9, 51, 'นาย', 'teacher01', 'teacher01', 'ศิลปะศาสตร์', 'การตลาด', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0);
+INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`, `Student_idcard`, `Supclass_std`, `Student_year`, `Phone_std`, `Email_std`, `Pic_grad`, `std_confirm_tran`, `teacher_con`) VALUES
+(3, 3, '', 'test23', 'test23', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 11020031, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0),
+(4, 36, 'นาย', 'test12', 'test12', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, 'sss@', '', 2, 0),
+(5, 37, 'นาย', 'asdasdasdasd', 'asdasdasdasd', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, '', '44702b57549a1853df2f4766bf2767d3.jpg', 2, 1),
+(9, 51, 'นาย', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0),
+(10, 56, 'นาย', 'test2', 'test2', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -193,12 +205,12 @@ INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (1, 'Admin', 'adminpassword', 'admin'),
 (3, 'asd', 'asd', 'student'),
 (36, '026230451', '1122334455', 'student'),
-(37, '123456789', '123456789', 'student'),
-(38, '02656565', '02656565', 'student'),
+(37, '123456789', '1234567890', 'student'),
 (51, 'teacher01teacher01', 'teacher01', 'student'),
 (52, 'teacher02', 'teacher02', 'teacher'),
 (54, 'teacher01', 'teacher01', 'teacher'),
-(55, 'admin2', 'admin2', 'admin');
+(55, 'admin2', 'admin2', 'admin'),
+(56, 'test2', 'test2', 'student');
 
 --
 -- Indexes for dumped tables
@@ -265,13 +277,13 @@ ALTER TABLE `admin_list`
 -- AUTO_INCREMENT for table `detail_confirm_tran`
 --
 ALTER TABLE `detail_confirm_tran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `student_detail`
 --
 ALTER TABLE `student_detail`
-  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -295,7 +307,7 @@ ALTER TABLE `transfer_std`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables
