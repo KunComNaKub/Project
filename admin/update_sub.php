@@ -14,7 +14,7 @@ if(isset($_POST['btn-update-sub']))
     $Group_course = $_POST['group-course'];
     $Sub_Year = $_POST['course-year'];
     $Credit = $_POST['credit-sub'];
-    if($Course_code == "" || $Name_sub == "" || $Group_Category == "" || $Group_sub == "" || $Faculty == "" || $Group_course == "" || $Sub_Year == "" || $Credit == ""){
+    if($Course_code == "" || $Name_sub == "" || $Group_Category == "------- โปรดเลือกกลุ่มวิชา -------" || $Group_sub == "------- โปรดเลือกกลุ่ม -------" || $Faculty == "------- โปรดเลือกคณะ -------" || $Group_course == "------ โปรดเลือกหมวดวิชา -------" || $Sub_Year == "" || $Credit == ""){
         echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
         window.location.href='admin_manageStd.php';</script>");
     }

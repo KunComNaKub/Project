@@ -26,7 +26,7 @@ $result3 = mysqli_query($connect,$query3);
 $row3 = $result3->fetch_assoc();
 
 $group_category = [];
-$query4 = "SELECT * FROM transfer_std INNER JOIN subject ON transfer_std.Subjecttrans_id = subject.Subject_id WHERE transfer_std.Student_id = 5 GROUP BY subject.Group_Category";
+$query4 = "SELECT * FROM transfer_std INNER JOIN subject ON transfer_std.Subjecttrans_id = subject.Subject_id WHERE transfer_std.Student_id = $student_id GROUP BY subject.Group_Category";
 $result4 = mysqli_query($connect,$query4);
 while ($row4 = mysqli_fetch_array($result4)){
     $group_category[$row4['Group_Category']][]=$row4;
@@ -36,7 +36,6 @@ foreach ($group_category as $key => $value){
     $group_num[$i] = $key;
     $i++;
 }
-
 
 $query_con = "SELECT * FROM detail_confirm_tran WHERE Student_id = $student_id";
 $resultcon = mysqli_query($connect,$query_con);
@@ -131,7 +130,6 @@ $pdf->SetFont('thsarabun', '', 14);
 for($i = 0; $i < count($group_num);$i++){
     std_tran($pdf,$student_id,$group_num[$i],$connect);
 }
-
 //หน้าอาจารย์ลงนาม
 $pdf->AddPage('L', 'A4');
 $pdf->Image('../picture/download.jpg',5,3,18,30);
