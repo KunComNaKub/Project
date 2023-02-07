@@ -16,8 +16,7 @@ if(isset($_POST['btn-add-transfer'])){
     $Subject_nametrann = $_POST['Subject_nametrann'];
     $Credit_tran = $_POST['Credit_tran'];
     $Gpa_tran =$_POST['Gpa_tran'];
-    
-    
+
     if($Subject_idtrann == "" || $Subject_nametrann == "" || $Credit_tran == "" || $Gpa_tran == ""){
         echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
         window.location.href='transfer_student.php?GetID=$Student_id';</script>");
@@ -28,7 +27,7 @@ if(isset($_POST['btn-add-transfer'])){
         $result4 = mysqli_query($connect,$check_nametran2);
         $check_subname = mysqli_fetch_assoc($result4);
 
-        $check_subtran_id = "SELECT * FROM transfer_std WHERE Student_id = $Student_id && Subject_idtran = $Subject_idtrann LIMIT 1";
+        $check_subtran_id = "SELECT * FROM transfer_std WHERE Student_id = $Student_id && Subject_idtran = '$Subject_idtrann' LIMIT 1";
         $result5 = mysqli_query($connect,$check_subtran_id);
         $check_idtran = mysqli_fetch_assoc($result5);
 
@@ -40,7 +39,7 @@ if(isset($_POST['btn-add-transfer'])){
             $check_subname['Subject_nametran'] = 0;
         }
         if(empty($check_idtran)){
-            $check_idtran['Subject_idtran'] = "null";
+            $check_idtran['Subject_idtran'] = 0;
         }
         if(empty($checksubjecttrans_id)){
             $checksubjecttrans_id['Subjecttrans_id'] = "null";

@@ -8,7 +8,8 @@ if (isset($_POST['btn-search'])){
     $major = $_POST['select-major'];
     $student_year = $_POST['student_year'];
     $supclass = $_POST['select-supclass'];
-    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' AND Supclass_std LIKE '%$supclass%' AND Student_year LIKE '%$student_year%'"; 
+    $scheme = $_POST['select-scheme'];
+    $sql = "SELECT * FROM student_detail WHERE Faculty LIKE '%$faculty%' AND Major LIKE '%$major%' AND Fname LIKE '%$name%' AND Supclass_std LIKE '%$supclass%' AND Student_year LIKE '%$student_year%' AND std_scheme LIKE '%$scheme%' "; 
 }
 else if(isset($_POST['btn-search'])){
     $name = $_POST["searchStd"];
@@ -101,6 +102,12 @@ $result = $connect->query($sql);
                             <option value="ภาคปกติ">ภาคปกติ</option>
                             <option value="ภาคสมทบ">ภาคสมทบ</option>
                         </select>
+                        <span>หลักสูตร</span>
+                            <select name="select-scheme">
+                                <option value ="">เลือกหลักสูตร</option>
+                                <option value ="ปริญญาตรี">ปริญญาตรี</option>
+                                <option value ="ปวส">ปวส</option>
+                            </select>
                         <span></span>
                         <input type="text" placeholder="ปีการศึกษา" name="student_year">
                         <input type="submit" value="ค้นหา" name="btn-search" class="btn-search">
@@ -165,6 +172,14 @@ $result = $connect->query($sql);
                                     <input type="text" placeholder="ปีการศึกษา" name="student_year">
                                 </div>
                                 <div class="form-element-std">
+                                    <label for="subject-scheme">หลักสูตร</label>
+                                        <select name ="std_scheme">
+                                            <option class="plz-select-choice">--------โปรดเลือกหลักสูตร---------</option>
+                                            <option value="ปริญญาตรี">ปริญญาตรี</option>
+                                            <option value="ปวส">ปวส</option>
+                                        </select>
+                                </div>
+                                <div class="form-element-std">
                                     <input type="submit" name="submit-add-std" value="ยืนยัน" class="confirm-add">
                                 </div>
                             </form>
@@ -180,6 +195,7 @@ $result = $connect->query($sql);
                                 <td><input type="submit" value="สาขา" name="stdname" class="input"></td>
                                 <td><input type="submit" value="ภาค" name="stdname" class="input"></td>
                                 <td><input type="submit" value="ปีการศึกษา" name="stdname" class="input"></td>
+                                <td>หลักสูตร</td>
                                 <td>ดูข้อมูล/แก้ไข</td>
                             </tr>
                             <?php while($row = $result->fetch_assoc()): ?>
@@ -189,6 +205,7 @@ $result = $connect->query($sql);
                                 <td><?php echo $row['Major'];?></td>
                                 <td><?php echo $row['Supclass_std'];?></td>
                                 <td><?php echo $row['Student_year']; ?></td>
+                                <td><?php echo $row['std_scheme'];?></td>
                                 <td><a href = "edit_std.php?GetID=<?php echo $row['Student_id']?>">edit</a></td>
                             </tr>
                             <?php endwhile ?>

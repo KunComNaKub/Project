@@ -9,7 +9,11 @@ if(isset($_POST['submit-add-sub'])){
     $Group_course = $_POST['group-course'];
     $Year = $_POST['course-year'];
     $Credit = $_POST['credit-sub'];
-    if($Course_code == "" || $Name_sub == "" || $Group_Category == "------- โปรดเลือกกลุ่มวิชา -------" || $Group_sub == "------- โปรดเลือกกลุ่ม -------" || $Faculty == "------- โปรดเลือกคณะ -------"|| $Group_course =="------ โปรดเลือกหมวดวิชา -------" ||$Year == "" || $Credit == ""){
+    $Sj_scheme = $_POST['sj_scheme'];
+    $Sj_description = $_POST['sj_discription'];
+    echo $Sj_description;
+    echo $Sj_scheme;
+    if($Course_code == "" || $Name_sub == "" || $Group_Category == "------- โปรดเลือกกลุ่มวิชา -------" || $Group_sub == "------- โปรดเลือกกลุ่ม -------" || $Faculty == "------- โปรดเลือกคณะ -------"|| $Group_course =="------ โปรดเลือกหมวดวิชา -------" ||$Year == "" || $Credit == ""||$Sj_scheme == "--------โปรดเลือกหลักสูตร---------"||$Sj_description == ""){
         echo("<script LANGUAGE='Javascript'>window.alert('กรุณากรอกข้อมูลให้ครบ');
         window.location.href='admin_manageSub.php';</script>");
     }
@@ -25,7 +29,7 @@ if(isset($_POST['submit-add-sub'])){
             echo("<script LANGUAGE='Javascript'>window.alert('รหัสวิชานี่ถูกใช่ไปแล้วหรือชื่อวิชานี้ถูกใช่ไปแล้ว');
             window.location.href='admin_manageSub.php';</script>");
         }else{
-            $query = "INSERT INTO subject (Course_code,Name_sub,Group_Category,Group_sub,Faculty,Group_course,Sub_Year,Credit) VALUE ('$Course_code','$Name_sub','$Group_Category','$Group_sub','$Faculty','$Group_course','$Year','$Credit')";
+            $query = "INSERT INTO subject (Course_code,Name_sub,Group_Category,Group_sub,Faculty,Group_course,Sub_Year,Credit,subject_scheme,Sub_descrip) VALUE ('$Course_code','$Name_sub','$Group_Category','$Group_sub','$Faculty','$Group_course','$Year','$Credit','$Sj_scheme','$Sj_description')";
             $result = mysqli_query($connect,$query);
             if($result){
                 echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');

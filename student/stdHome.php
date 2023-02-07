@@ -85,6 +85,8 @@ if($row['Student_idcard']==''){
                                             <td class = "text-detail-std-td"><?php echo $row['Major'];?></td>
                                             <td>ภาค:</td>
                                             <td class = "text-detail-std-td"><?php echo $row['Supclass_std'];?></td>
+                                            <td>หลักสูตร:</td>
+                                            <td class = "text-detail-std-td"><?php echo $row['std_scheme']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>เบอร์โทรศัพท์</td>

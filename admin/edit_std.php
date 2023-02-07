@@ -17,10 +17,10 @@ if(isset($_POST['submit'])){
     $std_year = $_POST['std-year'];
     $phone = $_POST['phone'];
     $email_std = $_POST['email-std'];
-
+    $scheme = $_POST['std_scheme'];
     $sql = "UPDATE user SET Username = '$username',Password = '$password' WHERE User_id = $User_id";
     $result = mysqli_query($connect,$sql);
-    $sql2 = "UPDATE student_detail SET Faculty = '$Faculty', Major = '$Major' , Supclass_std = '$supclass' , Student_year = '$std_year' , Phone_std = '$phone' , Email_std = '$email_std' WHERE User_id = $User_id";
+    $sql2 = "UPDATE student_detail SET Faculty = '$Faculty', Major = '$Major' , Supclass_std = '$supclass' , Student_year = '$std_year' , Phone_std = '$phone' , Email_std = '$email_std',std_scheme = '$scheme' WHERE User_id = $User_id";
     $result2 = mysqli_query($connect,$sql2);
     if($result && $result2){
         echo ("<script LANGUAGE='Javascript'>window.alert('สำเร็จ');
@@ -134,6 +134,14 @@ if(isset($_POST['submit'])){
                     <tr>
                         <td class = "title-edit-std">Email</td>
                         <td><input type = 'text' name = 'email-std' value = '<?php echo $row ['Email_std']?>'></td>
+                    </tr>
+                    <tr>
+                        <td class = "title-edit-std">หลักสูตร</td>
+                        <td><select name ="std_scheme">
+                            <option class="plz-select-choice">--------โปรดเลือกหลักสูตร---------</option>
+                            <option value="ปริญญาตรี" <?php if($row['std_scheme'] == 'ปริญญาตรี'){echo "selected";} ?>>ปริญญาตรี</option>
+                            <option value="ปวส"<?php if($row['std_scheme'] == 'ปวส'){echo "selected";} ?>>ปวส</option>
+                        </select></td>
                     </tr>
                 </table>
                     <input type = "submit" class= "btn-confirm-edit-std"name ='submit' value = ยืนยัน>

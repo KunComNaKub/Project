@@ -7,13 +7,14 @@ $sql = "SELECT * FROM student_detail, user WHERE student_detail.User_id = $id AN
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
 $Student_id = $row['Student_id'];
+$std_scheme = $row['std_scheme'];
 
 if(isset($_REQUEST['submit_delete'])){
     if($_REQUEST['Subject_idtran'] == ""){
         echo ("<script LANGUAGE='Javascript'>window.alert('ไม่มีรายการให้ลบ');</script>");
         $_REQUEST['Subject_idtran'] = 0;
     }else{
-        $deletesup = "DELETE FROM transfer_std WHERE Subject_idtran = {$_REQUEST['Subject_idtran']} && Student_id = $Student_id";
+        $deletesup = "DELETE FROM transfer_std WHERE Subject_idtran = '{$_REQUEST['Subject_idtran']}' && Student_id = $Student_id";
     if(mysqli_query($connect, $deletesup)){
         echo ("<script LANGUAGE='Javascript'>window.alert('ลบสำเร็จ');</script>");
     }
@@ -66,10 +67,11 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                     </div>
                 </div>
             </nav>
+            
             <form action ="add_transfer.php?ID=<?php echo $Student_id ;?>"class = "box_transfer" method="POST">
                 <?php
-                function displaytable($Student_id,$catagory_group_display,$connect){
-                    $sql = "SELECT * FROM subject left JOIN (SELECT * FROM transfer_std WHERE Student_id = $Student_id ) as transfer_std on subject.Subject_id = transfer_std.Subjecttrans_id WHERE Group_Category = '$catagory_group_display'";
+                function displaytable($Student_id,$catagory_group_display,$scheme,$connect){
+                    $sql = "SELECT * FROM subject left JOIN (SELECT * FROM transfer_std WHERE Student_id = $Student_id ) as transfer_std on subject.Subject_id = transfer_std.Subjecttrans_id WHERE Group_Category = '$catagory_group_display' AND subject.subject_scheme = '$scheme' ";
                     $result = $connect->query($sql);
                     if($result){
                         ?>
@@ -83,6 +85,7 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                                         <td>รหัสวิชา</td>
                                         <td>รายวิชาปริญาตรี มทร.ตะวันออก</td>
                                         <td>หน่วยกิต</td>
+                                        <td>คำอธิบายรายวิชา</td>
                                         <td>รหัสวิชา</td>
                                         <td>รายวิชาประกาศนียบัตรวิชาชีพชั้นสูง</td>
                                         <td>หน่วยกิต</td>
@@ -99,6 +102,7 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                                         <td><?php echo $row['Course_code'];?></td>
                                         <td><?php echo $row['Name_sub'];?></td>
                                         <td><?php echo $row['Credit'];?></td>
+                                        <td><a class = "subject_descrip" href ="sj_description.php?GetID=<?php echo $row['Subject_id'] ?>" >ดูคำอธิบายรายวิชา</td>
                                         <td><?php echo $row['Subject_idtran'];?></td>
                                         <td><?php echo $row['Subject_nametran'];?></td>
                                         <td><?php echo $row['Credit_tran'];?></td>
@@ -122,12 +126,12 @@ echo "<script> var value_std_confirm = '$value_std_confirm';</script>";
                     }
                 }
 
-                displaytable($Student_id,"กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์",$connect);
-                displaytable($Student_id,"กลุ่มภาษา",$connect);
-                displaytable($Student_id,"กลุ่มวิทยาศาสตร์และคณิตศาสตร์",$connect);
-                displaytable($Student_id,"กลุ่มบูรณาการ",$connect);
-                displaytable($Student_id,"กลุ่มวิชาแกน",$connect);
-                displaytable($Student_id,"กลุ่มวิชาฝึกงานและประสบการณ์",$connect);
+                displaytable($Student_id,"กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์",$std_scheme,$connect);
+                displaytable($Student_id,"กลุ่มภาษา",$std_scheme,$connect);
+                displaytable($Student_id,"กลุ่มวิทยาศาสตร์และคณิตศาสตร์",$std_scheme,$connect);
+                displaytable($Student_id,"กลุ่มบูรณาการ",$std_scheme,$connect);
+                displaytable($Student_id,"กลุ่มวิชาแกน",$std_scheme,$connect);
+                displaytable($Student_id,"กลุ่มวิชาฝึกงานและประสบการณ์",$std_scheme,$connect);
                 ?>
 
 

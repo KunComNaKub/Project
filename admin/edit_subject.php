@@ -17,6 +17,8 @@
         $Group_course = $row['Group_course'];
         $Sub_Year = $row['Sub_Year'];
         $Credit = $row['Credit'];
+        $Sj_scheme =$row['subject_scheme'];
+        $Sj_descrip = $row['Sub_descrip'];
     }
 ?>
 <!DOCTYPE html>
@@ -85,6 +87,18 @@
         <div class="form-element-sub">
             <label for="course-year">ปีการศึกษา</label>
             <input type="text" id="course-year" name="course-year" value = "<?php echo $Sub_Year ?>">
+        </div>
+        <div class="form-element-sub">
+            <label for="subject-scheme">หลักสูตร</label>
+            <select name ="sj_scheme">
+                <option class="plz-select-choice">--------โปรดเลือกหลักสูตร---------</option>
+                <option value="ปริญญาตรี" <?php if($Sj_scheme == 'ปริญญาตรี'){echo "selected";} ?>>ปริญญาตรี</option>
+                <option value="ปวส"<?php if($Sj_scheme == 'ปวส'){echo "selected";} ?>>ปวส</option>
+            </select>
+        </div>
+        <div class="form-element-sub">
+            <label for="subject-discription">คำอธิบายรายวิชา</label>
+            <input type="text" id="sj_discription" name="sj_discription" value="<?php echo $Sj_descrip ?>">
         </div>
         <div class="form-element-sub">
             <input type="submit" name="btn-update-sub" value="ยืนยันอัพเดต" class="confirm-add">

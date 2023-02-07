@@ -9,7 +9,8 @@ if(isset($_POST['btn-search-catagorie'])){
     $groupcatagorie = $_POST['group-sub-catagorie'];
     $name = $_POST["searchSub"];
     $sub_year = $_POST["sub-year"];
-    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_Category Like '%$catagorie%'AND Group_sub Like '%$groupcatagorie%' AND Name_sub LIKE '%$name%' AND Sub_year LIKE '%$sub_year%' ";
+    $sj_scheme = $_POST["select-scheme"];
+    $sql = "SELECT * FROM subject WHERE Faculty LIKE '%$faculty%' AND Group_course LIKE '%$groupcoures%' AND Group_Category Like '%$catagorie%'AND Group_sub Like '%$groupcatagorie%' AND Name_sub LIKE '%$name%' AND Sub_year LIKE '%$sub_year%' AND subject_scheme LIKE '%$sj_scheme%'";
 }
 else if (isset($_POST['btn-search-catagorie'])){
     $name = $_POST["searchSub"];
@@ -110,7 +111,14 @@ $result = $connect->query($sql);
                             <select class = "group-sub-catagorie" name= "group-sub-catagorie">
                                 <option value="">เลือกกลุ่ม</option>
                             </select>
+                            <span>หลักสูตร</span>
+                            <select name="select-scheme">
+                                <option value ="">เลือกหลักสูตร</option>
+                                <option value ="ปริญญาตรี">ปริญญาตรี</option>
+                                <option value ="ปวส">ปวส</option>
+                            </select>
                             <input type= "text" placeholder="ปีการศึกษา" name = "sub-year">
+                            
                             <input type="submit" value="ค้นหา" name="btn-search-catagorie" class="btn-catagorie">
                         </form>
                     </div> 
@@ -178,6 +186,18 @@ $result = $connect->query($sql);
                                         <input type="text" id="course-year" name="course-year">
                                     </div>
                                     <div class="form-element-sub">
+                                        <label for="subject-scheme">หลักสูตร</label>
+                                        <select name ="sj_scheme">
+                                            <option class="plz-select-choice">--------โปรดเลือกหลักสูตร---------</option>
+                                            <option value="ปริญญาตรี">ปริญญาตรี</option>
+                                            <option value="ปวส">ปวส</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-element-sub">
+                                        <label for="subject-discription">คำอธิบายรายวิชา</label>
+                                        <input type="text" id="sj_discription" name="sj_discription">
+                                    </div>
+                                    <div class="form-element-sub">
                                         <input type="submit" name="submit-add-sub" value="ยืนยัน" class="confirm-add">
                                     </div>
                                 </form>
@@ -196,6 +216,8 @@ $result = $connect->query($sql);
                             <td>ชื่อวิชา</td>
                             <td>หน่วยกิต</td>
                             <td>ปีการศึกษา</td>
+                            <td>หลักสูตร</td>
+                            <td>คำอธิบายรายวิชา</td>
                             <td>แก้ไข</td>
                         </tr>
                         <?php while($row = $result->fetch_assoc()): ?>
@@ -208,6 +230,8 @@ $result = $connect->query($sql);
                             <td><?php echo $row['Name_sub'];?></td>
                             <td><?php echo $row['Credit'];?></td>
                             <td><?php echo $row['Sub_Year'];?></td>
+                            <td><?php echo $row['subject_scheme'];?></td>
+                            <td><a class = "subject_descrip" href ="sj_description.php?GetID=<?php echo $row['Subject_id'] ?>" >ดูคำอธิบายรายวิชา</td>
                             <td><a href = "edit_subject.php?GetID=<?php echo $row['Subject_id']?>" class ="btn-edit-subject">edit</a></td>
                         </tr>
                         <?php endwhile ?>
