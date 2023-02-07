@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 28, 2023 at 06:29 AM
+-- Generation Time: Feb 07, 2023 at 03:48 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -68,7 +68,8 @@ CREATE TABLE `detail_confirm_tran` (
 
 INSERT INTO `detail_confirm_tran` (`id`, `Student_id`, `name_advisor`, `name_chief`, `name_president`, `name_1`, `name_2`, `name_3`, `name_4`, `name_5`) VALUES
 (6, 4, 'asdasddasdas', 'dasasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasd'),
-(7, 5, 'asd', 'asd', 'asdasdasd', 'asdasdasd', 'asdasdasd', '', '', '');
+(7, 5, 'asd', 'asd', 'asdasdasd', 'asdasdasd', 'asdasdasd', '', '', ''),
+(8, 11, 'กกกกกกก', 'ฟหกฟหก', 'ฟหกฟหกฟหก', 'ฟหกฟหกฟหก', 'กกกกกกก', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -91,19 +92,22 @@ CREATE TABLE `student_detail` (
   `Email_std` text,
   `Pic_grad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `std_confirm_tran` int(1) NOT NULL DEFAULT '0',
-  `teacher_con` int(1) NOT NULL DEFAULT '0'
+  `teacher_con` int(1) NOT NULL DEFAULT '0',
+  `std_scheme` enum('ปริญญาตรี','ปวส') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `student_detail`
 --
 
-INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`, `Student_idcard`, `Supclass_std`, `Student_year`, `Phone_std`, `Email_std`, `Pic_grad`, `std_confirm_tran`, `teacher_con`) VALUES
-(3, 3, '', 'test23', 'test23', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 11020031, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0),
-(4, 36, 'นาย', 'test12', 'test12', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, 'sss@', '', 2, 0),
-(5, 37, 'นาย', 'asdasdasdasd', 'asdasdasdasd', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, '', '44702b57549a1853df2f4766bf2767d3.jpg', 2, 1),
-(9, 51, 'นาย', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0),
-(10, 56, 'นาย', 'test2', 'test2', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0, 0);
+INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`, `Student_idcard`, `Supclass_std`, `Student_year`, `Phone_std`, `Email_std`, `Pic_grad`, `std_confirm_tran`, `teacher_con`, `std_scheme`) VALUES
+(3, 3, '', 'test23', 'test23', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 11020031, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0, 'ปริญญาตรี'),
+(4, 36, 'นาย', 'test12', 'test12', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, 'sss@', '', 2, 0, 'ปริญญาตรี'),
+(5, 37, 'นาย', 'asdasdasdasd', 'asdasdasdasd', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, '', '44702b57549a1853df2f4766bf2767d3.jpg', 0, 1, 'ปริญญาตรี'),
+(9, 51, 'นาย', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0, 'ปวส'),
+(10, 56, 'นาย', 'test2', 'test2', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี'),
+(11, 57, 'นาย', 'ทดสอบ', 'ทดสอบ', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 1102002020, 'ภาคสมทบ', 2557, 123456, 'asasd@gmail.com', '44702b57549a1853df2f4766bf2767d3.jpg', 0, 1, 'ปวส'),
+(12, 59, 'นาย', 'sooohoo', 'ssoloo', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี');
 
 -- --------------------------------------------------------
 
@@ -120,18 +124,20 @@ CREATE TABLE `subject` (
   `Faculty` enum('บริหารธุรกิจ','ศิลปะศาสตร์') NOT NULL,
   `Group_course` enum('ศึกษาทั่วไป-บังคับ','ศึกษาทั่วไป-เลือก','เฉพาะ-แกน','เฉพาะ-เลือก','เลือกเสรี') NOT NULL,
   `Sub_Year` int(4) NOT NULL,
-  `Credit` int(1) NOT NULL
+  `Credit` int(1) NOT NULL,
+  `Sub_descrip` text NOT NULL,
+  `subject_scheme` enum('ปริญญาตรี','ปวส') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `subject`
 --
 
-INSERT INTO `subject` (`Subject_id`, `Course_code`, `Name_sub`, `Group_Category`, `Group_sub`, `Faculty`, `Group_course`, `Sub_Year`, `Credit`) VALUES
-(2, '02623', 'lnw', 'กลุ่มภาษา', 'รายวิชาภาษาต่างประเทศอื่น', 'ศิลปะศาสตร์', 'เฉพาะ-แกน', 2557, 3),
-(3, '011-01001', 'asdsadsadsasd', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3),
-(4, '011-0100', 'asdasddddd', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3),
-(7, '011-01001', 'สังคม', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-เลือก', 2556, 3);
+INSERT INTO `subject` (`Subject_id`, `Course_code`, `Name_sub`, `Group_Category`, `Group_sub`, `Faculty`, `Group_course`, `Sub_Year`, `Credit`, `Sub_descrip`, `subject_scheme`) VALUES
+(3, '011-01001', 'asdsadsadsasd', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
+(4, '011-0100', 'asdasddddd', 'กลุ่มวิทยาศาสตร์และคณิตศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
+(7, '011-01001', 'สังคม', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-เลือก', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
+(9, '011-01234', 'หัดเทพ', 'กลุ่มวิทยาศาสตร์และคณิตศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษา', 'ปวส');
 
 -- --------------------------------------------------------
 
@@ -155,7 +161,8 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`Teacher_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`) VALUES
 (3, 52, 'นาง', 'teacher02', 'teacher02', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ'),
-(5, 54, 'ผศ.', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ');
+(5, 54, 'ผศ.', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ'),
+(6, 58, 'ดร.', 'อาจารย์ศูนย์', 'อาจารย์ศูนย์', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ');
 
 -- --------------------------------------------------------
 
@@ -181,8 +188,8 @@ CREATE TABLE `transfer_std` (
 
 INSERT INTO `transfer_std` (`id`, `Student_id`, `Subjecttrans_id`, `Subject_idtran`, `Subject_nametran`, `Credit_tran`, `Gpa_tran`, `Year_tran`, `Teacher_pass`) VALUES
 (78, 4, 3, '123', 'asdasd', 3, 3.5, 2556, 'ผ่าน'),
-(81, 5, 3, '123', 'asdasd', 3, 3.5, 2556, 'ผ่าน'),
-(82, 5, 4, '01-220-001', 'dddddddddd', 3, 3.5, 2556, 'ไม่ผ่าน');
+(83, 11, 3, '01-00-333354', 'ทดสอบ', 3, 3.5, 2557, 'ผ่าน'),
+(89, 11, 7, '123-114-52', 'asdasda', 3, 3.5, 2557, 'พิจารณา');
 
 -- --------------------------------------------------------
 
@@ -202,7 +209,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
-(1, 'Admin', 'adminpassword', 'admin'),
+(1, 'Admin', 'adminadmin', 'admin'),
 (3, 'asd', 'asd', 'student'),
 (36, '026230451', '1122334455', 'student'),
 (37, '123456789', '1234567890', 'student'),
@@ -210,7 +217,10 @@ INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (52, 'teacher02', 'teacher02', 'teacher'),
 (54, 'teacher01', 'teacher01', 'teacher'),
 (55, 'admin2', 'admin2', 'admin'),
-(56, 'test2', 'test2', 'student');
+(56, 'test2', 'test2', 'student'),
+(57, '012345678900', '11020031', 'student'),
+(58, 'testteacher01', 'testteacher01', 'teacher'),
+(59, 'mr01', 'mr01', 'student');
 
 --
 -- Indexes for dumped tables
@@ -277,37 +287,37 @@ ALTER TABLE `admin_list`
 -- AUTO_INCREMENT for table `detail_confirm_tran`
 --
 ALTER TABLE `detail_confirm_tran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `student_detail`
 --
 ALTER TABLE `student_detail`
-  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `Subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transfer_std`
 --
 ALTER TABLE `transfer_std`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Constraints for dumped tables
