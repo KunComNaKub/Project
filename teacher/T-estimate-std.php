@@ -101,8 +101,10 @@ require '../connect.php';
                             displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','วิทยาการสารสนเทศ',$connect);
                             displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','การตลาด',$connect);
                             displaytable('บริหารธุรกิจและเทคโนโลยีสารสนเทศ','บัญชี',$connect);
-                    
-                                
+                            displaytable('ศิลปะศาสตร์','วิทยาการสารสนเทศ',$connect);
+                            displaytable('ศิลปะศาสตร์','การตลาด',$connect);
+                            displaytable('ศิลปะศาสตร์','บัญชี',$connect);
+     
                         ?>
                     </form>
                 </div>

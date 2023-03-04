@@ -2,9 +2,7 @@
 session_start();
 require 'checkTeacher.php';
 require '../connect.php';
-echo '<pre>';
-    print_r($_POST);
-echo '<pre>';
+
 $id = $_GET['GetID'];
 foreach($_POST['estimate'] as $item => $value){
     if($value == 'พิจารณา'){
