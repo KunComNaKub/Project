@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
-<<<<<<< HEAD
--- Generation Time: Mar 04, 2023 at 02:36 PM
-=======
--- Generation Time: Feb 07, 2023 at 03:48 AM
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
+-- Generation Time: Mar 05, 2023 at 02:16 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -71,13 +67,7 @@ CREATE TABLE `detail_confirm_tran` (
 --
 
 INSERT INTO `detail_confirm_tran` (`id`, `Student_id`, `name_advisor`, `name_chief`, `name_president`, `name_1`, `name_2`, `name_3`, `name_4`, `name_5`) VALUES
-<<<<<<< HEAD
 (10, 20, 'ทดสอบ 1', 'ทดสอบ 2', 'ทดสอบ 3', 'ทดสอบ 4', 'ทดสอบ 5', '', '', '');
-=======
-(6, 4, 'asdasddasdas', 'dasasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasdasd', 'asdasdasd', 'asdasdasd', 'asdasdasd'),
-(7, 5, 'asd', 'asd', 'asdasdasd', 'asdasdasd', 'asdasdasd', '', '', ''),
-(8, 11, 'กกกกกกก', 'ฟหกฟหก', 'ฟหกฟหกฟหก', 'ฟหกฟหกฟหก', 'กกกกกกก', '', '', '');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 -- --------------------------------------------------------
 
@@ -109,7 +99,6 @@ CREATE TABLE `student_detail` (
 --
 
 INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`, `Student_idcard`, `Supclass_std`, `Student_year`, `Phone_std`, `Email_std`, `Pic_grad`, `std_confirm_tran`, `teacher_con`, `std_scheme`) VALUES
-<<<<<<< HEAD
 (13, 60, 'นาย', 'หมายเลขหนึ่ง', 'หนึ่ง', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 1102002020, 'ภาคปกติ', 2556, 2147483647, 'testtestmail@gmail.com', 'images.jpg', 1, 0, 'ปริญญาตรี'),
 (14, 61, 'นาง', 'หมายเลขสอง', 'สอง', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'การตลาด', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี'),
 (15, 62, 'นาย', 'หมายเลขสี่', 'สี่', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'บัญชี', NULL, 'ภาคสมทบ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี'),
@@ -117,15 +106,6 @@ INSERT INTO `student_detail` (`Student_id`, `User_id`, `Prefix`, `Fname`, `Lname
 (19, 66, 'นาย', 'หมายเลขเจ็ด', 'เจ็ด', 'ศิลปะศาสตร์', 'การตลาด', NULL, 'ภาคสมทบ', 2556, 0, '', NULL, 1, 0, 'ปริญญาตรี'),
 (20, 69, 'นางสาว', 'หมายเลขสาม', 'สาม', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 2, 1, 'ปวส'),
 (21, 70, 'นาง', 'หมายเลขหก', 'หมายเลขหก', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'การตลาด', NULL, 'ภาคสมทบ', 2556, NULL, NULL, NULL, 0, 0, 'ปวส');
-=======
-(3, 3, '', 'test23', 'test23', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 11020031, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0, 'ปริญญาตรี'),
-(4, 36, 'นาย', 'test12', 'test12', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, 'sss@', '', 2, 0, 'ปริญญาตรี'),
-(5, 37, 'นาย', 'asdasdasdasd', 'asdasdasdasd', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 110200, 'ภาคสมทบ', 2556, 0, '', '44702b57549a1853df2f4766bf2767d3.jpg', 0, 1, 'ปริญญาตรี'),
-(9, 51, 'นาย', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, 0, 'sss@hotmail.com', NULL, 0, 0, 'ปวส'),
-(10, 56, 'นาย', 'test2', 'test2', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', NULL, 'ภาคปกติ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี'),
-(11, 57, 'นาย', 'ทดสอบ', 'ทดสอบ', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ', 1102002020, 'ภาคสมทบ', 2557, 123456, 'asasd@gmail.com', '44702b57549a1853df2f4766bf2767d3.jpg', 0, 1, 'ปวส'),
-(12, 59, 'นาย', 'sooohoo', 'ssoloo', 'ศิลปะศาสตร์', 'วิทยาการสารสนเทศ', NULL, 'ภาคสมทบ', 2556, NULL, NULL, NULL, 0, 0, 'ปริญญาตรี');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 -- --------------------------------------------------------
 
@@ -152,7 +132,6 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`Subject_id`, `Course_code`, `Name_sub`, `Group_Category`, `Group_sub`, `Faculty`, `Group_course`, `Sub_Year`, `Credit`, `Sub_descrip`, `subject_scheme`) VALUES
-<<<<<<< HEAD
 (10, '00-11-001', 'สังคมกับเศรษฐกิจ', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษาค้นคว้าสังคมกับเศรษฐกิจ', 'ปริญญาตรี'),
 (11, '00-11-002', 'สังคมกับกฎหมาย', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษาค้นคว้าสังคมกับกฎหมาย', 'ปริญญาตรี'),
 (12, '00-11-003', 'สังคมวิทยาและมานุษยวิทยาเบื้องต้น', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษาค้นคว้าสังคมวิทยาและมานุษยวิทยาเบื้องต้น', 'ปริญญาตรี'),
@@ -168,12 +147,6 @@ INSERT INTO `subject` (`Subject_id`, `Course_code`, `Name_sub`, `Group_Category`
 (22, '00-31-001', 'เทคโนโลยีสารสนเทศในยุคดิจิทัล', 'กลุ่มวิทยาศาสตร์และคณิตศาสตร์', 'รายวิชาวิทยาศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษาเทคโนโลยีสารสนเทศในยุคดิจิทัล', 'ปริญญาตรี'),
 (23, '00-41-002', 'มหัศจรรย์แห่งบัว', 'กลุ่มบูรณาการ', ' รายวิชาบูรณาการ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-เลือก', 2556, 3, 'เพื่อการศึกษามหัศจรรย์แห่งบัว', 'ปริญญาตรี'),
 (24, '04-00-104', 'กฎหมายธุรกิจและการภาษีอากร', 'กลุ่มวิชาแกน', 'วิชาแกน', 'บริหารธุรกิจ', 'เฉพาะ-แกน', 2556, 3, 'เพื่อการศึกษากฎหมายธุรกิจและการภาษีอากร', 'ปริญญาตรี');
-=======
-(3, '011-01001', 'asdsadsadsasd', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
-(4, '011-0100', 'asdasddddd', 'กลุ่มวิทยาศาสตร์และคณิตศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
-(7, '011-01001', 'สังคม', 'กลุ่มสังคมศาสตร์และมนุษย์ศาสตร์', 'รายวิชาสังคมศาสตร์', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-เลือก', 2556, 3, 'asdasdsdadsadasasds', 'ปริญญาตรี'),
-(9, '011-01234', 'หัดเทพ', 'กลุ่มวิทยาศาสตร์และคณิตศาสตร์', 'รายวิชาบังคับ', 'บริหารธุรกิจ', 'ศึกษาทั่วไป-บังคับ', 2556, 3, 'เพื่อการศึกษา', 'ปวส');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 -- --------------------------------------------------------
 
@@ -196,14 +169,8 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`Teacher_id`, `User_id`, `Prefix`, `Fname`, `Lname`, `Faculty`, `Major`) VALUES
-<<<<<<< HEAD
 (7, 67, 'นาย', 'อาจารย์หนึ่ง', 'หนึ่ง', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ'),
 (8, 68, 'ผศ.ดร.', 'อาจารย์สอง', 'สอง', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'การตลาด');
-=======
-(3, 52, 'นาง', 'teacher02', 'teacher02', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ'),
-(5, 54, 'ผศ.', 'teacher01', 'teacher01', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ'),
-(6, 58, 'ดร.', 'อาจารย์ศูนย์', 'อาจารย์ศูนย์', 'บริหารธุรกิจและเทคโนโลยีสารสนเทศ', 'วิทยาการสารสนเทศ');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 -- --------------------------------------------------------
 
@@ -228,7 +195,6 @@ CREATE TABLE `transfer_std` (
 --
 
 INSERT INTO `transfer_std` (`id`, `Student_id`, `Subjecttrans_id`, `Subject_idtran`, `Subject_nametran`, `Credit_tran`, `Gpa_tran`, `Year_tran`, `Teacher_pass`) VALUES
-<<<<<<< HEAD
 (100, 19, 13, '01-220-001', 'จิตวิทยาทั่วไป', 3, 3.5, 2556, 'พิจารณา'),
 (101, 19, 14, '01-320-101', 'ภาษาอังกฤษ 1', 3, 3.5, 2556, 'พิจารณา'),
 (102, 19, 15, '01-320-102', 'ภาษาอังกฤษ 2', 3, 2.5, 2556, 'พิจารณา'),
@@ -239,11 +205,6 @@ INSERT INTO `transfer_std` (`id`, `Student_id`, `Subjecttrans_id`, `Subject_idtr
 (107, 13, 10, '01-220-001', 'จิตวิทยาทั่วไป', 3, 3.5, 2556, 'พิจารณา'),
 (108, 13, 14, '01-320-101', 'ภาษาอังกฤษ 1', 3, 3.5, 2556, 'พิจารณา'),
 (109, 13, 15, '01-320-102', 'ภาษาอังกฤษ 2', 3, 2.5, 2556, 'พิจารณา');
-=======
-(78, 4, 3, '123', 'asdasd', 3, 3.5, 2556, 'ผ่าน'),
-(83, 11, 3, '01-00-333354', 'ทดสอบ', 3, 3.5, 2557, 'ผ่าน'),
-(89, 11, 7, '123-114-52', 'asdasda', 3, 3.5, 2557, 'พิจารณา');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 -- --------------------------------------------------------
 
@@ -264,7 +225,6 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (1, 'Admin', 'adminadmin', 'admin'),
-<<<<<<< HEAD
 (55, 'admin2', 'admin2', 'admin'),
 (60, '012345678901-2', '1234567890', 'student'),
 (61, '012345678901-1', '98765432100', 'student'),
@@ -275,19 +235,6 @@ INSERT INTO `user` (`User_id`, `Username`, `Password`, `Role`) VALUES
 (68, 'teacher02', 'teacher02', 'teacher'),
 (69, '012345678901-9', '123456789019', 'student'),
 (70, '012345678901-8', '123456789018', 'student');
-=======
-(3, 'asd', 'asd', 'student'),
-(36, '026230451', '1122334455', 'student'),
-(37, '123456789', '1234567890', 'student'),
-(51, 'teacher01teacher01', 'teacher01', 'student'),
-(52, 'teacher02', 'teacher02', 'teacher'),
-(54, 'teacher01', 'teacher01', 'teacher'),
-(55, 'admin2', 'admin2', 'admin'),
-(56, 'test2', 'test2', 'student'),
-(57, '012345678900', '11020031', 'student'),
-(58, 'testteacher01', 'testteacher01', 'teacher'),
-(59, 'mr01', 'mr01', 'student');
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- Indexes for dumped tables
@@ -354,61 +301,37 @@ ALTER TABLE `admin_list`
 -- AUTO_INCREMENT for table `detail_confirm_tran`
 --
 ALTER TABLE `detail_confirm_tran`
-<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-=======
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- AUTO_INCREMENT for table `student_detail`
 --
 ALTER TABLE `student_detail`
-<<<<<<< HEAD
   MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-=======
-  MODIFY `Student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-<<<<<<< HEAD
   MODIFY `Subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-=======
-  MODIFY `Subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-<<<<<<< HEAD
   MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-=======
-  MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- AUTO_INCREMENT for table `transfer_std`
 --
 ALTER TABLE `transfer_std`
-<<<<<<< HEAD
   MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
-=======
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-<<<<<<< HEAD
   MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
-=======
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
->>>>>>> 24a02d6a8c3717a2f26ffc5011715406aebcee6e
 
 --
 -- Constraints for dumped tables
