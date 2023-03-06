@@ -74,15 +74,16 @@ function std_tran($pdf,$Student_id,$Group,$connect){
         $html .=    '<table>
                         <tr>
                             <td style="width:57px"> กลุ่มวิชา</td>
-                            <td style="width:60px"> หมวดวิชา</td>
-                            <td style="width:45px"> รหัสวิชา</td>
-                            <td style="width:110px"> รายวิชาปริญาตรี มทร.ตะวันออก</td>
+                            <td style="width:58px"> หมวดวิชา</td>
+                            <td style="width:40px"> รหัสวิชา</td>
+                            <td style="width:100px"> รายวิชาปริญาตรี มทร.ตะวันออก</td>
                             <td style="width:30px"> หน่วยกิต</td>
-                            <td style="width:45px"> รหัสวิชา</td>
-                            <td style="width:110px"> รายวิชาประกาศนียบัตร วิชาชีพชั้นสูง</td>
-                            <td style="width:30px"> หน่วยกิต</td>
-                            <td style="width:20px"> เกรด</td>
+                            <td style="width:40px"> รหัสวิชา</td>
+                            <td style="width:100px"> รายวิชาประกาศนียบัตร วิชาชีพชั้นสูง</td>
+                            <td style="width:28px"> หน่วยกิต</td>
+                            <td style="width:18px"> เกรด</td>
                             <td style="width:35px"> ผลพิจารณา</td>
+                            <td style="width:45px"> หมายเหตุ </td>
                         </tr>
                     ';
         while ($row = mysqli_fetch_assoc($result3)){
@@ -98,6 +99,7 @@ function std_tran($pdf,$Student_id,$Group,$connect){
                             <td>'.$row['Credit_tran'].'</td>
                             <td>'.$row['Gpa_tran'].'</td>
                             <td>'.$row['Teacher_pass'].'</td>
+                            <td>'.$row['remark'].'</td>
                         </tr>';
         }
     }

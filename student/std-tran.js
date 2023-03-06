@@ -19,6 +19,7 @@ if(value_std_confirm == 2){
 }
 if(value_std_confirm == 3){
     let btntran = document.querySelectorAll(".pass,.no-tran,.pending");
+    document.querySelector(".download-std").classList.add("disable");
     btntran.forEach(btn => btn.style.display = "none")
 }
 
