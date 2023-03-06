@@ -99,12 +99,12 @@ if($row['Student_idcard']==''){
                                 
                                 <div class="menu-student">
                                     <ul class="menu-student-link">
-                                        <li class="link">
+                                        <li class="link1">
                                             <a href="edit_student.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>แก้ไขข้อมูล</span>
                                             </a>
                                         </li>
-                                        <li class="link">
+                                        <li class="linkd">
                                             <a href="transfer_student.php?GetID=<?php echo $row['Student_id']; ?>">
                                                 <span>เทียบโอน</span>
                                             </a>
@@ -136,6 +136,7 @@ if($row['Student_idcard']==''){
                                         <td><h class = "pass">เทียบโอนได้รับการอนุมัติแล้ว</h>
                                             <h class = "no-tran">ยังไม่ได้ทำการเทียบโอน</h>
                                             <h class = "pending">รอการพิจารณา</h>
+                                            <h class = "fail">การเทียบโอนบางวิชาไม่ผ่าน</h>
                                         </td>
                                         <td class = "v1"></td>
                                         <td><a href ="pdf_std_tran.php?GetID=<?php echo $row['Student_id'] ?>&ACTION=VIEW" class = "preview-std">Preview</td>

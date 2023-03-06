@@ -1,4 +1,4 @@
-if(num == 0){
+if(num == 0 || num2 == 3){
     document.querySelector(".btn-custom").classList.add("disable");
 }
 if(num == 1){

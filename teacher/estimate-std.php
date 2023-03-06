@@ -11,7 +11,9 @@ $sql2 = "SELECT * FROM student_detail WHERE Student_id = $Student_id";
 $result = $connect->query($sql2);
 $row2 = $result->fetch_assoc();
 $num = $row2['teacher_con'];
+$num2 = $row2['std_confirm_tran'];
 echo "<script> var num = '$num'</script>";
+echo "<script> var num2 = '$num2'</script>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,6 +85,7 @@ echo "<script> var num = '$num'</script>";
                                 <td>หน่วยกิต</td>
                                 <td>เกรด</td>
                                 <td>พิจารณา</td>
+                                <td>หมายเหตุ</td>
                             </tr>
                             <?php
                                 while ($row = $result ->fetch_assoc()):
@@ -101,9 +104,10 @@ echo "<script> var num = '$num'</script>";
                                 <td><?php echo $row['Gpa_tran']; ?></td>
                                 <td><select name="estimate[<?php echo $id ?>]">
                                     <option value = <?php echo $row ['Teacher_pass'] ?>><?php echo $row ['Teacher_pass'] ?></option>
-                                    <option value = "ผ่าน">ผ่าน</option>
-                                    <option value = "ไม่ผ่าน">ไม่ผ่าน</option>
+                                    <option value = "ผ่าน"<?php if($row['Teacher_pass'] == "ผ่าน"){echo "selected";} ?>>ผ่าน</option>
+                                    <option value = "ไม่ผ่าน"<?php if($row['Teacher_pass'] == "ไม่ผ่าน"){echo "selected";} ?>>ไม่ผ่าน</option>
                                 </select></td>
+                                <td><input type="text" name="remark[<?php echo $id ?>]" value = "<?php echo $row['remark'] ?>"></td>
                             </tr>
                             <?php endwhile ?>
                         </table>
